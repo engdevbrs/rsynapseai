@@ -1,0 +1,181 @@
+'use client'
+
+import { motion } from 'framer-motion'
+import Image from 'next/image'
+import FadeIn from '@/components/animations/FadeIn'
+import { companyData } from '@/lib/data'
+import { 
+  Eye, 
+  Users, 
+  Lightbulb, 
+  Target,
+  ArrowRight,
+  Sparkles
+} from 'lucide-react'
+
+export default function Vision() {
+  return (
+    <section id="vision" className="relative py-32 lg:py-48 bg-futuristic-gradient overflow-hidden">
+      {/* Background Elements */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <motion.div
+          animate={{
+            scale: [1, 1.2, 1],
+            opacity: [0.1, 0.15, 0.1],
+          }}
+          transition={{
+            duration: 10,
+            repeat: Infinity,
+            ease: 'easeInOut',
+          }}
+          className="absolute -top-40 -right-40 w-96 h-96 bg-cyan-accent rounded-full blur-3xl"
+        />
+        <motion.div
+          animate={{
+            scale: [1, 1.3, 1],
+            opacity: [0.08, 0.12, 0.08],
+          }}
+          transition={{
+            duration: 12,
+            repeat: Infinity,
+            ease: 'easeInOut',
+            delay: 2,
+          }}
+          className="absolute bottom-0 -left-40 w-96 h-96 bg-blue-primary rounded-full blur-3xl"
+        />
+      </div>
+
+      <div className="container mx-auto px-4 lg:px-8 relative z-10">
+        {/* Section Header */}
+        <FadeIn delay={0.2} className="text-center mb-16">
+          <motion.div
+            initial={{ scale: 0.9, opacity: 0 }}
+            whileInView={{ scale: 1, opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="text-center"
+          >
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-text-primary mb-4">
+              {companyData.vision.title}
+            </h2>
+            <div className="h-1 w-24 bg-gradient-to-r from-cyan-accent to-blue-primary mx-auto rounded-full mt-6" />
+            <p className="mt-6 sm:mt-8 text-base sm:text-lg text-text-secondary mx-auto text-center">
+              {companyData.vision.description}
+            </p>
+          </motion.div>
+        </FadeIn>
+
+        {/* Main Content Grid */}
+        <div className="grid lg:grid-cols-2 gap-16 lg:gap-20 items-center">
+          {/* Left Column - Vision Blocks */}
+          <FadeIn delay={0.3} direction="left">
+            <div className="space-y-8">
+              {companyData.vision.blocks.map((block, index) => (
+                <motion.div
+                  key={block.number}
+                  initial={{ opacity: 0, x: -30 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.4 + index * 0.2 }}
+                  whileHover={{ scale: 1.02, x: 10 }}
+                  className="group p-6 lg:p-8 rounded-3xl card-futuristic hover:border-neon-cyan/30 transition-all duration-300"
+                >
+                  <div className="flex items-start space-x-6">
+                    {/* Number Badge */}
+                    <div className="flex-shrink-0 w-16 h-16 card-number-minimal rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                      <span className="text-2xl font-heading font-bold">
+                        {block.number}
+                      </span>
+                    </div>
+
+                    {/* Content */}
+                    <div className="flex-1 min-w-0">
+                      <h3 className="text-xl lg:text-2xl font-heading font-semibold text-text-primary mb-3 group-hover:text-neon-cyan transition-colors duration-300">
+                        {block.title}
+                      </h3>
+                      <p className="text-text-secondary leading-relaxed group-hover:text-text-primary transition-colors duration-300">
+                        {block.description}
+                      </p>
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </FadeIn>
+
+          {/* Right Column - Robot Images Grid */}
+          <FadeIn delay={0.4} direction="right">
+            <div className="relative">
+              {/* Main Vision Image */}
+              <motion.div
+                whileHover={{ scale: 1.04 }}
+                transition={{ duration: 0.4, ease: "easeOut" }}
+                className="relative overflow-hidden rounded-lg mb-6"
+              >
+                <Image
+                  src="/images/vision.png"
+                  alt="Nuestra Visión"
+                  width={600}
+                  height={450}
+                  className="w-full h-48 sm:h-56 md:h-64 lg:h-72 xl:h-80 object-contain"
+                  priority
+                />
+              </motion.div>
+
+              {/* Additional Robot Images Grid */}
+              <div className="grid grid-cols-2 gap-4">
+                {[
+                  { icon: Users, text: "Humanos + IA" },
+                  { icon: Lightbulb, text: "Innovación" },
+                ].map((item, index) => (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.6 + index * 0.1 }}
+                    whileHover={{ scale: 1.05 }}
+                    className="p-4 rounded-lg bg-navy-dark/50 border border-cyan-accent/20 text-center group hover:border-cyan-accent/50 transition-all duration-300"
+                  >
+                    <item.icon className="w-8 h-8 text-cyan-accent mx-auto mb-2 group-hover:scale-110 transition-transform duration-300" />
+                    <p className="text-xs text-gray-300 group-hover:text-white transition-colors duration-300">
+                      {item.text}
+                    </p>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+          </FadeIn>
+        </div>
+
+        {/* Bottom Stats */}
+        <FadeIn delay={0.8} className="mt-20">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            {[
+              { number: "100+", label: "Empresas Transformadas" },
+              { number: "50+", label: "Proyectos Exitosos" },
+              { number: "95%", label: "Satisfacción Cliente" },
+              { number: "24/7", label: "Soporte Técnico" },
+            ].map((stat, index) => (
+              <motion.div
+                key={stat.label}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.9 + index * 0.1 }}
+                className="text-center p-4 rounded-lg bg-navy-dark/30 border border-gray-700/50 hover:border-cyan-accent/30 transition-all duration-300"
+              >
+                <div className="text-2xl lg:text-3xl font-heading font-bold text-cyan-accent mb-1">
+                  {stat.number}
+                </div>
+                <div className="text-sm text-gray-400">
+                  {stat.label}
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </FadeIn>
+      </div>
+    </section>
+  )
+}

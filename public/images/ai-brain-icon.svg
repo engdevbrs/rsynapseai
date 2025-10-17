@@ -1,0 +1,34 @@
+<svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Cerebro principal -->
+  <path d="M100 20C60 20 30 50 30 90C30 100 32 110 35 120C40 130 45 140 50 150C55 160 60 170 70 175C80 180 90 185 100 190C110 185 120 180 130 175C140 170 145 160 150 150C155 140 160 130 165 120C168 110 170 100 170 90C170 50 140 20 100 20Z" fill="url(#brainGradient)" stroke="#00FFFF" stroke-width="2"/>
+  
+  <!-- Neuronas -->
+  <circle cx="70" cy="60" r="4" fill="#00FFFF" opacity="0.8"/>
+  <circle cx="130" cy="60" r="4" fill="#00FFFF" opacity="0.8"/>
+  <circle cx="60" cy="100" r="3" fill="#00FFFF" opacity="0.6"/>
+  <circle cx="140" cy="100" r="3" fill="#00FFFF" opacity="0.6"/>
+  <circle cx="80" cy="130" r="3" fill="#00FFFF" opacity="0.6"/>
+  <circle cx="120" cy="130" r="3" fill="#00FFFF" opacity="0.6"/>
+  <circle cx="100" cy="80" r="5" fill="#00FFFF" opacity="0.9"/>
+  
+  <!-- Conexiones neuronales -->
+  <path d="M70 60L100 80L130 60" stroke="#00FFFF" stroke-width="1" fill="none" opacity="0.5"/>
+  <path d="M60 100L80 130L100 80" stroke="#00FFFF" stroke-width="1" fill="none" opacity="0.5"/>
+  <path d="M100 80L120 130L140 100" stroke="#00FFFF" stroke-width="1" fill="none" opacity="0.5"/>
+  
+  <!-- Efectos de brillo -->
+  <circle cx="100" cy="80" r="8" fill="url(#glowGradient)" opacity="0.3"/>
+  
+  <!-- Gradientes -->
+  <defs>
+    <linearGradient id="brainGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#001122;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#002244;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#003366;stop-opacity:1" />
+    </linearGradient>
+    <radialGradient id="glowGradient" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#00FFFF;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#00FFFF;stop-opacity:0" />
+    </radialGradient>
+  </defs>
+</svg>
