@@ -68,7 +68,7 @@ export default function Footer() {
                   </div>
                   <div>
                     <h3 className="text-2xl font-heading font-bold text-white group-hover:text-cyan-accent transition-colors duration-300">
-                      Synapse.ia
+                      RSYNAPSYSEAI
                     </h3>
                     <p className="text-sm text-gray-400 group-hover:text-gray-300 transition-colors duration-300">
                       AI Solutions
@@ -158,7 +158,7 @@ export default function Footer() {
             {/* Copyright */}
             <FadeIn delay={0.5} direction="left">
               <p className="text-gray-400 text-sm">
-                {companyData.footer.copyright} Synapse.ia. Todos los derechos reservados.
+                {companyData.footer.copyright} RSYNAPSYSEAI. Todos los derechos reservados.
               </p>
             </FadeIn>
 

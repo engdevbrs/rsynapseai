@@ -84,7 +84,7 @@ export default function Header() {
               </div>
               <div className="hidden sm:block">
                 <h1 className="text-xl lg:text-2xl font-heading font-bold text-white group-hover:text-cyan-accent transition-colors duration-300">
-                  Synapse.ia
+                  RSYNAPSYSEAI
                 </h1>
                 <p className="text-xs text-gray-400 group-hover:text-gray-300 transition-colors duration-300">
                   AI Solutions

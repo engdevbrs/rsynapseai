@@ -66,13 +66,13 @@ export default function About() {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-text-primary mb-4">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-text-primary" style={{ marginBottom: 0 }}>
               ACERCA DE
               <span className="block text-gradient-subtitle">
                 INTELIGENCIA ARTIFICIAL
               </span>
             </h2>
-            <div className="h-1 w-24 bg-gradient-to-r from-neon-cyan to-electric-blue mx-auto rounded-full mt-6" />
+            <div className="h-1 w-24 bg-gradient-to-r from-neon-cyan to-electric-blue mx-auto rounded-full" style={{ marginTop: 0 }} />
           </motion.div>
         </FadeIn>
 
@@ -190,25 +190,37 @@ export default function About() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="p-8 lg:p-12 rounded-2xl bg-gradient-to-br from-navy-medium to-navy-light border border-blue-primary/20 relative overflow-hidden"
+              whileHover={{ scale: 1.02, y: -5 }}
+              className="group relative p-8 lg:p-12 rounded-2xl bg-transparent border border-purple-accent/40 transition-all duration-300 hover:border-purple-accent/70"
+              style={{
+                boxShadow: '0 0 20px rgba(168, 85, 247, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.1)',
+              }}
             >
-              {/* Background Pattern */}
-              <div
-                className="absolute inset-0 opacity-5"
-                style={{
-                  backgroundImage: `radial-gradient(circle, rgba(91, 124, 255, 0.5) 1px, transparent 1px)`,
-                  backgroundSize: '30px 30px',
-                }}
-              />
 
-              <div className="relative z-10">
-                <h3 className="text-2xl md:text-3xl font-heading font-bold text-white mb-6">
+              <div className="relative z-10 flex flex-col items-center gap-8">
+                <motion.h3
+                  className="text-2xl md:text-3xl font-heading font-bold"
+                  style={{
+                    backgroundImage: 'linear-gradient(135deg, #06B6D4 0%, #3B82F6 50%, #A855F7 100%)',
+                    WebkitBackgroundClip: 'text',
+                    WebkitTextFillColor: 'transparent',
+                    backgroundClip: 'text',
+                    filter: 'drop-shadow(0 0 8px rgba(6, 182, 212, 0.4))'
+                  }}
+                >
                   {companyData.history.title}
-                </h3>
-                <p className="text-lg text-gray-300 leading-relaxed">
+                </motion.h3>
+
+                <p className="text-base sm:text-lg text-gray-300 leading-relaxed">
                   {companyData.history.content}
                 </p>
               </div>
+
+              {/* Corner decorations */}
+              <div className="absolute top-4 right-4 w-4 h-4 border-t-2 border-r-2 border-cyan-accent/50 rounded-tr-lg" />
+              <div className="absolute top-4 left-4 w-4 h-4 border-t-2 border-l-2 border-cyan-accent/50 rounded-tl-lg" />
+              <div className="absolute bottom-4 right-4 w-4 h-4 border-b-2 border-r-2 border-purple-accent/50 rounded-br-lg" />
+              <div className="absolute bottom-4 left-4 w-4 h-4 border-b-2 border-l-2 border-purple-accent/50 rounded-bl-lg" />
             </motion.div>
           </div>
         </FadeIn>

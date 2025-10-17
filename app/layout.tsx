@@ -28,8 +28,8 @@ const spaceGrotesk = Space_Grotesk({
 
 export const metadata: Metadata = {
   title: {
-    default: "Synapse.ia | Transformamos Negocios con Inteligencia Artificial",
-    template: "%s | Synapse.ia - Consultoría en IA"
+    default: "RSYNAPSYSEAI | Transformamos Negocios con Inteligencia Artificial",
+    template: "%s | RSYNAPSYSEAI - Consultoría en IA"
   },
   description: "Consultora especializada en inteligencia artificial. Desarrollamos e integramos soluciones de IA para automatización, machine learning, chatbots y desarrollo de software. Transformamos tu negocio con tecnología avanzada.",
   keywords: [
@@ -43,42 +43,42 @@ export const metadata: Metadata = {
     "asistentes virtuales",
     "análisis predictivo",
     "transformación digital",
-    "Synapse.ia",
+    "RSYNAPSYSEAI",
     "Rodolfo Figueroa",
     "consultoría tecnológica",
     "soluciones IA personalizadas"
   ],
-  authors: [{ name: "Synapse.ia", url: "https://synapse.ia" }],
-  creator: "Synapse.ia",
-  publisher: "Synapse.ia",
+  authors: [{ name: "RSYNAPSYSEAI", url: "https://rsynapsyseai.com" }],
+  creator: "RSYNAPSYSEAI",
+  publisher: "RSYNAPSYSEAI",
   formatDetection: {
     email: false,
     address: false,
     telephone: false,
   },
-  metadataBase: new URL("https://synapse.ia"),
+  metadataBase: new URL("https://rsynapsyseai.com"),
   alternates: {
     canonical: "/",
   },
   openGraph: {
     type: "website",
     locale: "es_ES",
-    url: "https://synapse.ia",
-    title: "Synapse.ia | Transformamos Negocios con Inteligencia Artificial",
+    url: "https://rsynapsyseai.com",
+    title: "RSYNAPSYSEAI | Transformamos Negocios con Inteligencia Artificial",
     description: "Consultoría especializada en IA. Desarrollamos soluciones de inteligencia artificial para automatización, machine learning y transformación digital empresarial.",
-    siteName: "Synapse.ia",
+    siteName: "RSYNAPSYSEAI",
     images: [
       {
         url: "/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Synapse.ia - Consultoría en Inteligencia Artificial",
+        alt: "RSYNAPSYSEAI - Consultoría en Inteligencia Artificial",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Synapse.ia | Transformamos Negocios con IA",
+    title: "RSYNAPSYSEAI | Transformamos Negocios con IA",
     description: "Consultoría especializada en inteligencia artificial para empresas. Automatización, machine learning y desarrollo de software.",
     images: ["/og-image.jpg"],
     creator: "@synapse_ia",
@@ -105,10 +105,10 @@ export const metadata: Metadata = {
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Organization",
-  "name": "Synapse.ia",
-  "alternateName": "Synapse IA",
-  "url": "https://synapse.ia",
-  "logo": "https://synapse.ia/logo.png",
+  "name": "RSYNAPSYSEAI",
+  "alternateName": "RSYNAPSYSEAI",
+  "url": "https://rsynapsyseai.com",
+  "logo": "https://rsynapsyseai.com/logo.png",
   "description": "Consultora especializada en inteligencia artificial. Desarrollamos e integramos soluciones de IA para automatización, machine learning y transformación digital empresarial.",
   "foundingDate": "2024",
   "founder": {
@@ -129,12 +129,12 @@ const jsonLd = {
     "@type": "ContactPoint",
     "telephone": "+123-456-7890",
     "contactType": "customer service",
-    "email": "info@synapse.ia",
+    "email": "info@rsynapsyseai.com",
     "availableLanguage": "Spanish"
   },
   "sameAs": [
-    "https://linkedin.com/company/synapse-ia",
-    "https://twitter.com/synapse_ia"
+    "https://linkedin.com/company/rsynapsyseai",
+    "https://twitter.com/rsynapsyseai"
   ],
   "service": [
     {

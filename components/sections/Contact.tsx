@@ -77,6 +77,9 @@ export default function Contact() {
           }}
           className="absolute bottom-0 -left-40 w-96 h-96 bg-cyan-accent rounded-full blur-3xl"
         />
+        
+        {/* Circuit Pattern Background */}
+        <div className="absolute inset-0 bg-circuit-pattern opacity-20" />
       </div>
 
       <div className="container mx-auto px-4 lg:px-8 relative z-10">
@@ -89,10 +92,10 @@ export default function Contact() {
             transition={{ duration: 0.5 }}
             className="text-center"
           >
-                   <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-text-primary mb-4">
+                   <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-text-primary" style={{ marginBottom: 0 }}>
               CONTACTO
             </h2>
-            <div className="h-1 w-24 bg-gradient-to-r from-blue-primary to-cyan-accent mx-auto rounded-full mt-6" />
+            <div className="h-1 w-24 bg-gradient-to-r from-blue-primary to-cyan-accent mx-auto rounded-full" style={{ marginTop: 0 }} />
             <p className="mt-6 sm:mt-8 text-base sm:text-lg text-text-secondary mx-auto text-center">
               ¿Listo para transformar tu negocio? Contáctanos y comencemos a trabajar juntos
             </p>

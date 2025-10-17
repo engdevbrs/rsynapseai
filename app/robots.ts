@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next'
 
 export default function robots(): MetadataRoute.Robots {
-  const baseUrl = 'https://synapse.ia'
+  const baseUrl = 'https://rsynapsyseai.com'
 
   return {
     rules: [

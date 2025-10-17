@@ -67,13 +67,13 @@ export default function Services() {
             transition={{ duration: 0.5 }}
             className="text-center"
           >
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-text-primary mb-4">
-              ACERCA DE
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-text-primary" style={{ marginBottom: 0 }}>
+              ACERCA DE NUESTROS
               <span className="block text-gradient-subtitle">
-                TECNOLOGÍA
+                SERVICIOS
               </span>
             </h2>
-            <div className="h-1 w-24 bg-gradient-to-r from-neon-cyan to-purple-neon mx-auto rounded-full mt-6" />
+            <div className="h-1 w-24 bg-gradient-to-r from-neon-cyan to-purple-neon mx-auto rounded-full" style={{ marginTop: 0 }} />
             <p className="mt-6 sm:mt-8 text-base sm:text-lg text-text-secondary mx-auto text-center">
               Descubre cómo nuestras soluciones de inteligencia artificial pueden
               transformar y optimizar tu negocio para un futuro más inteligente.

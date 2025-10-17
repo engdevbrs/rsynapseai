@@ -81,6 +81,9 @@ export default function Projects() {
           }}
           className="absolute bottom-0 -right-40 w-96 h-96 bg-cyan-accent rounded-full blur-3xl"
         />
+        
+        {/* Circuit Pattern Background */}
+        <div className="absolute inset-0 bg-circuit-pattern opacity-20" />
       </div>
 
       <div className="container mx-auto px-4 lg:px-8 relative z-10">
@@ -93,13 +96,13 @@ export default function Projects() {
             transition={{ duration: 0.5 }}
             className="text-center"
           >
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-text-primary mb-4">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-text-primary" style={{ marginBottom: 0 }}>
               NUESTROS
               <span className="block text-gradient-subtitle">
                 PROYECTOS
               </span>
             </h2>
-            <div className="h-1 w-24 bg-gradient-to-r from-purple-accent to-cyan-accent mx-auto rounded-full mt-6" />
+            <div className="h-1 w-24 bg-gradient-to-r from-purple-accent to-cyan-accent mx-auto rounded-full" style={{ marginTop: 0 }} />
             <p className="mt-6 sm:mt-8 text-base sm:text-lg text-text-secondary mx-auto text-center">
               Descubre los proyectos innovadores que estamos desarrollando para revolucionar 
               el futuro de la inteligencia artificial empresarial.
@@ -218,26 +221,32 @@ export default function Projects() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="p-8 lg:p-12 rounded-2xl bg-gradient-to-br from-navy-medium to-navy-light border border-purple-accent/20 relative overflow-hidden"
+            whileHover={{ scale: 1.02, y: -5 }}
+            className="group relative p-8 lg:p-12 rounded-2xl bg-transparent border border-cyan-accent/40 transition-all duration-300 hover:border-cyan-accent/70"
+            style={{
+              boxShadow: 'none',
+            }}
           >
-            {/* Background Pattern */}
-            <div
-              className="absolute inset-0 opacity-5"
-              style={{
-                backgroundImage: `radial-gradient(circle, rgba(217, 70, 239, 0.5) 1px, transparent 1px)`,
-                backgroundSize: '30px 30px',
-              }}
-            />
 
-            <div className="relative z-10">
-              <h3 className="text-2xl md:text-3xl font-heading font-bold text-text-primary mb-4">
+            <div className="relative z-10 flex flex-col items-center gap-8">
+              <motion.h3
+                className="text-2xl md:text-3xl font-heading font-bold"
+                style={{
+                  backgroundImage: 'linear-gradient(135deg, #A855F7 0%, #EC4899 50%, #F97316 100%)',
+                  WebkitBackgroundClip: 'text',
+                  WebkitTextFillColor: 'transparent',
+                  backgroundClip: 'text',
+                  filter: 'drop-shadow(0 0 8px rgba(168, 85, 247, 0.4))'
+                }}
+              >
                 ¿Interesado en nuestros proyectos?
-              </h3>
-              <p className="text-lg text-text-secondary mb-6 mx-auto text-center">
-                Mantente al día con nuestros últimos desarrollos y sé el primero en conocer 
+              </motion.h3>
+
+              <p className="text-base sm:text-lg text-gray-300 mx-auto text-center leading-relaxed">
+                Mantente al día con nuestros últimos desarrollos y sé el primero en conocer
                 las innovaciones que estamos creando.
               </p>
-              
+
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
@@ -245,7 +254,7 @@ export default function Projects() {
                   const contactSection = document.querySelector('#contact')
                   contactSection?.scrollIntoView({ behavior: 'smooth' })
                 }}
-                className="group relative px-8 py-4 bg-gradient-to-r from-neon-cyan to-electric-blue text-text-primary font-semibold text-lg rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 border border-neon-cyan/20 hover:border-neon-cyan/40"
+                className="group relative px-8 py-4 bg-transparent text-text-primary font-semibold text-lg rounded-2xl transition-all duration-300 border border-neon-cyan/40 hover:border-neon-cyan/60"
               >
                 <span className="relative z-10 flex items-center gap-2">
                   Mantenerse informado
@@ -262,6 +271,12 @@ export default function Projects() {
                 </span>
               </motion.button>
             </div>
+
+            {/* Corner decorations */}
+            <div className="absolute top-4 right-4 w-4 h-4 border-t-2 border-r-2 border-cyan-accent/50 rounded-tr-lg" />
+            <div className="absolute top-4 left-4 w-4 h-4 border-t-2 border-l-2 border-cyan-accent/50 rounded-tl-lg" />
+            <div className="absolute bottom-4 right-4 w-4 h-4 border-b-2 border-r-2 border-blue-primary/50 rounded-br-lg" />
+            <div className="absolute bottom-4 left-4 w-4 h-4 border-b-2 border-l-2 border-blue-primary/50 rounded-bl-lg" />
           </motion.div>
         </FadeIn>
       </div>

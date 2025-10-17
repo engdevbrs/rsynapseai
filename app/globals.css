@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 /* ========================================
-   SYNAPSE.IA - GLOBAL STYLES
+   RSYNAPSYSEAI - GLOBAL STYLES
    Sistema de diseño futurista con tema IA
    ======================================== */
 
@@ -253,14 +253,23 @@ a:hover {
 
 /* Títulos con gradiente legible */
 .text-gradient-title {
-  background: linear-gradient(135deg, var(--neon-cyan) 0%, var(--electric-blue) 50%, var(--purple-neon) 100%);
+  background: linear-gradient(90deg, #00FFFF 0%, #3B82F6 35%, #A855F7 70%, #EC4899 100%);
+  background-size: 200% auto;
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  text-shadow: none;
-  filter: drop-shadow(0 0 8px var(--neon-cyan-subtle));
-  text-align: center;
-  display: block;
+  animation: shimmer 3s linear infinite;
+  filter: drop-shadow(0 0 12px rgba(0, 255, 255, 0.5))
+          drop-shadow(0 0 20px rgba(168, 85, 247, 0.3));
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 0% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
 }
 
 .text-gradient-subtitle {

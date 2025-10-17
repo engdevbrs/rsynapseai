@@ -1,19 +1,19 @@
 /**
- * SYNAPSE.IA - DATOS DE LA EMPRESA
+ * RSYNAPSYSEAI - DATOS DE LA EMPRESA
  * Contenido centralizado para toda la aplicación
  */
 
 export const companyData = {
-  name: "Synapse.ia",
+  name: "RSYNAPSYSEAI",
   tagline: "¡Transformamos Negocios!",
-  subtitle: "Innovación Inteligente para un mundo más simple",
-  cta: "COMENCEMOS A TRABAJAR JUNTOS",
+  subtitle: "Potenciamos tu empresa con Inteligencia Artificial de última generación. Automatizamos procesos, optimizamos decisiones y multiplicamos resultados. Transforma la complejidad en simplicidad y lleva tu negocio al siguiente nivel.",
+  cta: "TRABAJEMOS JUNTOS",
 
   // Sección: Quiénes Somos
   about: {
     title: "Quiénes Somos",
     description:
-      "En synapse.ia somos una consultora especializada en el desarrollo e integración de soluciones basadas en inteligencia artificial. Nuestro enfoque combina innovación, tecnología avanzada y una comprensión profunda de la IA para crear herramientas que simplifican procesos, automatizan tareas y potencian tanto a personas como a empresas. Desde el desarrollo de software inteligente hasta la implementación de sistemas automatizados personalizados, convertimos desafíos en oportunidades a través de soluciones escalables, eficientes y a medida.",
+      "En RSYNAPSYSEAI somos una consultora especializada en el desarrollo e integración de soluciones basadas en inteligencia artificial. Nuestro enfoque combina innovación, tecnología avanzada y una comprensión profunda de la IA para crear herramientas que simplifican procesos, automatizan tareas y potencian tanto a personas como a empresas. Desde el desarrollo de software inteligente hasta la implementación de sistemas automatizados personalizados, convertimos desafíos en oportunidades a través de soluciones escalables, eficientes y a medida.",
     percentage: 80,
   },
 
@@ -59,15 +59,15 @@ export const companyData = {
 
   // Sección: Historia
   history: {
-    title: "La historia detrás de Synapse.ia",
+    title: "La historia detrás de RSYNAPSYSEAI",
     content:
-      "Synapse.ia nació con un propósito claro: acercar la inteligencia artificial a las empresas de forma práctica, entendible y útil. Después de ver cómo muchas organizaciones se pierden entre soluciones complejas o promesas poco realistas, hemos creado una alternativa más humana y accesible. Hoy ayudamos a negocios de distintos rubros a integrar la IA en sus procesos diarios, con enfoque en resultados reales, simplicidad y rentabilidad.",
+      "RSYNAPSYSEAI nació con un propósito claro: acercar la inteligencia artificial a las empresas de forma práctica, entendible y útil. Después de ver cómo muchas organizaciones se pierden entre soluciones complejas o promesas poco realistas, hemos creado una alternativa más humana y accesible. Hoy ayudamos a negocios de distintos rubros a integrar la IA en sus procesos diarios, con enfoque en resultados reales, simplicidad y rentabilidad.",
   },
 
   // Sección: CEO Profile
   ceo: {
     name: "Rodolfo Figueroa",
-    title: "CEO Synapse.ia",
+    title: "CEO RSYNAPSYSEAI",
     bio: "Hola, soy Rodolfo Figueroa, Ingeniero en Informática y tengo un Magíster en Inteligencia Artificial. Llevo más de 10 años trabajando en tecnología, colaborando con empresas como Mercado Libre y compañías de Estados Unidos. Después de todo ese recorrido, decidí crear mi propia empresa para ayudar a otras organizaciones a mejorar, crecer y simplificar sus procesos usando herramientas tecnológicas e inteligencia artificial.",
     credentials: [
       "Ingeniero en Informática",
@@ -82,11 +82,11 @@ export const companyData = {
   solutions: {
     title: "Soluciones Personalizadas Para Cada Negocio",
     subtitle:
-      "En Synapse IA nos dedicamos a adaptar la inteligencia artificial a las necesidades específicas de cada empresa, maximizando su valor y eficiencia.",
+      "En RSYNAPSYSEAI nos dedicamos a adaptar la inteligencia artificial a las necesidades específicas de cada empresa, maximizando su valor y eficiencia.",
     personalizedSolutions: {
       title: "Soluciones Personalizadas",
       description:
-        "En Synapse IA, conectamos el poder de la inteligencia artificial con la experiencia en desarrollo de software para ofrecer soluciones personalizadas que aceleran la transformación digital de empresas en distintas industrias.",
+        "En RSYNAPSYSEAI, conectamos el poder de la inteligencia artificial con la experiencia en desarrollo de software para ofrecer soluciones personalizadas que aceleran la transformación digital de empresas en distintas industrias.",
     },
     expertise: {
       title: "Expertos en IA",
@@ -174,10 +174,10 @@ export const companyData = {
 
   // Información de Contacto
   contact: {
-    phone: "+123-456-7890",
-    email: "info@synapse.ia",
-    website: "www.synapse.ia",
-    address: "123 Anywhere ST., Any City, ST 12345",
+    phone: "+56 9 1234 5678",
+    email: "info@rsynapsyseai.com",
+    website: "www.rsynapsyseai.com",
+    address: "Santiago, Chile",
   },
 
   // Footer

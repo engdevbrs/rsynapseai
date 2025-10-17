@@ -18,7 +18,7 @@ export async function POST(request: NextRequest) {
     // En un entorno de producción, aquí enviarías el email real:
     // await sendEmail({
     //   to: companyData.contact.email,
-    //   from: 'noreply@synapse.ia',
+    //   from: 'noreply@rsynapsyseai.com',
     //   subject: `Nuevo mensaje de contacto de ${validatedData.name}`,
     //   html: generateEmailTemplate(validatedData),
     // })
@@ -65,7 +65,7 @@ export async function POST(request: NextRequest) {
 function generateEmailTemplate(data: ContactFormData) {
   return `
     <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
-      <h2 style="color: #5b7cff;">Nuevo mensaje de contacto - Synapse.ia</h2>
+      <h2 style="color: #5b7cff;">Nuevo mensaje de contacto - RSYNAPSYSEAI</h2>
       
       <div style="background: #f8f9fa; padding: 20px; border-radius: 8px; margin: 20px 0;">
         <h3 style="color: #333; margin-top: 0;">Información del contacto:</h3>
@@ -81,7 +81,7 @@ function generateEmailTemplate(data: ContactFormData) {
       </div>
       
       <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #eee; color: #666; font-size: 14px;">
-        <p>Este mensaje fue enviado desde el formulario de contacto de synapse.ia</p>
+        <p>Este mensaje fue enviado desde el formulario de contacto de RSYNAPSYSEAI</p>
         <p>Fecha: ${new Date().toLocaleString('es-ES')}</p>
       </div>
     </div>
