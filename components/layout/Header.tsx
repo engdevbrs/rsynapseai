@@ -182,6 +182,7 @@ export default function Header() {
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3, ease: 'easeInOut' }}
             className="xl:hidden bg-navy-dark/98 backdrop-blur-md border-t border-blue-primary/20"
+            data-mobile-menu
           >
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
               <nav className="space-y-4">

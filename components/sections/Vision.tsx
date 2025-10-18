@@ -78,10 +78,15 @@ export default function Vision() {
                   key={block.number}
                   initial={{ opacity: 0, x: -30 }}
                   whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.4 + index * 0.2 }}
+                  viewport={{ once: true, margin: "-50px" }}
+                  transition={{ 
+                    delay: 0.4 + index * 0.2,
+                    duration: 0.6,
+                    ease: "easeOut",
+                    type: "tween"
+                  }}
                   whileHover={{ scale: 1.02, x: 10 }}
-                  className="group p-6 lg:p-8 rounded-3xl card-futuristic hover:border-neon-cyan/30 transition-all duration-300"
+                  className="group p-6 lg:p-8 rounded-3xl card-futuristic hover:border-neon-cyan/30 transition-all duration-300 will-change-transform"
                 >
                   <div className="flex items-start space-x-6">
                     {/* Number Badge */}
