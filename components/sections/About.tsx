@@ -1,229 +1,192 @@
 'use client'
 
-import { motion } from 'framer-motion'
 import Image from 'next/image'
-import FadeIn from '@/components/animations/FadeIn'
-import CircularProgress from '@/components/ui/CircularProgress'
-import ClientOnlyFloatingParticles from '@/components/ui/ClientOnlyFloatingParticles'
 import { companyData } from '@/lib/data'
-import { Brain, Zap, Users, TrendingUp } from 'lucide-react'
+import { Building2, User, Users, Award, Calendar, Briefcase, CheckCircle2 } from 'lucide-react'
 
 export default function About() {
-  const features = [
-    {
-      icon: Brain,
-      title: 'IA Avanzada',
-      description: 'Soluciones con tecnología de punta',
-    },
-    {
-      icon: Zap,
-      title: 'Automatización',
-      description: 'Procesos optimizados y eficientes',
-    },
-    {
-      icon: Users,
-      title: 'Equipo Experto',
-      description: '10+ años de experiencia',
-    },
-    {
-      icon: TrendingUp,
-      title: 'Resultados',
-      description: 'ROI comprobado',
-    },
-  ]
-
   return (
-    <section id="about" className="relative py-24 lg:py-40 bg-futuristic-gradient overflow-hidden">
-      {/* Background Elements */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <motion.div
-          animate={{
-            scale: [1, 1.2, 1],
-            opacity: [0.1, 0.2, 0.1],
-          }}
-          transition={{
-            duration: 10,
-            repeat: Infinity,
-            ease: 'easeInOut',
-          }}
-          className="absolute -top-40 -right-40 w-96 h-96 bg-blue-primary rounded-full blur-3xl"
-        />
-        
-        {/* Circuit Pattern */}
-        <div className="absolute inset-0 bg-circuit-pattern opacity-15" />
-        
-        {/* Subtle Floating Particles */}
-        <ClientOnlyFloatingParticles count={6} color="bg-neon-cyan" size={1} opacity={0.2} speed={5} />
-        <ClientOnlyFloatingParticles count={4} color="bg-electric-blue" size={1} opacity={0.15} speed={4} />
-      </div>
+    <section id="about" className="relative py-24 bg-bg-primary">
+      <div className="container mx-auto px-6 lg:px-12 max-w-7xl">
 
-      <div className="container mx-auto px-4 lg:px-8 relative z-10">
         {/* Section Header */}
-        <FadeIn delay={0.2} className="text-center mb-16">
-          <motion.div
-            initial={{ scale: 0.9, opacity: 0 }}
-            whileInView={{ scale: 1, opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
+        <div className="mb-16">
+          <h2
+            className="text-3xl lg:text-4xl font-heading font-semibold mb-4"
+            style={{
+              background: 'linear-gradient(90deg, #18cade 0%, #a78bfa 50%, #f472b6 100%)',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+              backgroundClip: 'text',
+            }}
           >
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-text-primary" style={{ marginBottom: 0 }}>
-              ACERCA DE
-              <span className="block text-gradient-subtitle">
-                INTELIGENCIA ARTIFICIAL
-              </span>
-            </h2>
-            <div className="h-1 w-24 bg-gradient-to-r from-neon-cyan to-electric-blue mx-auto rounded-full" style={{ marginTop: 0 }} />
-          </motion.div>
-        </FadeIn>
+            {companyData.about.title}
+          </h2>
+          <div className="h-1 w-20 bg-brand-primary rounded-full" />
+        </div>
 
-        {/* Main Content Grid */}
-        <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
-          {/* Left Column - Circular Progress & Visual */}
-          <FadeIn delay={0.3} direction="left">
-            <div className="relative">
-              {/* Circular Progress */}
-              <div className="flex justify-center lg:justify-start mb-6 lg:mb-8">
-                <CircularProgress
-                  percentage={companyData.about.percentage}
-                  size={240}
-                  strokeWidth={16}
-                  color="#00d4ff"
-                  duration={2.5}
-                />
-              </div>
+        {/* Main Content - Two Columns */}
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 mb-20">
 
-              {/* Innovation Image */}
-              <motion.div
-                whileHover={{ scale: 1.04 }}
-                transition={{ duration: 0.4, ease: "easeOut" }}
-                className="relative overflow-hidden rounded-lg"
-              >
-                <Image
-                  src="/images/innovation.png"
-                  alt="Innovación Tecnológica"
-                  width={500}
-                  height={300}
-                  className="w-full h-48 sm:h-56 md:h-64 lg:h-72 xl:h-80 object-contain"
-                  priority
-                />
-              </motion.div>
-            </div>
-          </FadeIn>
-
-          {/* Right Column - Content */}
+          {/* Left Column - Profile */}
           <div className="space-y-8">
-            <FadeIn delay={0.4} direction="right">
-              <div className="space-y-6">
-                <h3 className="text-2xl sm:text-3xl md:text-4xl font-heading font-bold text-text-primary">
-                  {companyData.about.title}
+            <div className="flex items-start gap-6">
+              <div className="w-24 h-24 bg-bg-secondary rounded-lg flex items-center justify-center flex-shrink-0 border border-brand-primary/20">
+                <User className="w-12 h-12 text-brand-primary" />
+              </div>
+              <div>
+                <h3 className="text-2xl font-heading font-semibold text-text-primary mb-2">
+                  {companyData.ceo.name}
                 </h3>
-                <p className="text-base sm:text-lg text-text-secondary leading-relaxed">
-                  {companyData.about.description}
+                <p className="text-brand-primary font-medium mb-4">
+                  {companyData.ceo.title}
+                </p>
+                <p className="text-text-secondary leading-relaxed">
+                  {companyData.ceo.bio}
                 </p>
               </div>
-            </FadeIn>
+            </div>
 
-            {/* Features Grid */}
-            <FadeIn delay={0.6} direction="right">
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-4 mt-6 lg:mt-8">
-                {features.map((feature, index) => (
-                  <motion.div
-                    key={feature.title}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: 0.7 + index * 0.1 }}
-                    whileHover={{ scale: 1.05, y: -5 }}
-                    className="p-5 sm:p-5 rounded-2xl card-futuristic hover:border-neon-cyan/30 transition-all duration-300 group"
-                  >
-                    <div className="flex items-start space-x-3 sm:space-x-4">
-                      <div className="flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 card-icon-minimal rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
-                        <feature.icon className="w-5 h-5 sm:w-6 sm:h-6 text-neon-cyan" />
-                      </div>
-                      <div className="flex-1 min-w-0 pr-2 sm:pr-0">
-                        <h4 className="font-heading font-semibold text-text-primary text-sm sm:text-base mb-2 group-hover:text-neon-cyan transition-colors duration-300 break-words">
-                          {feature.title}
-                        </h4>
-                        <p className="text-xs sm:text-sm text-text-secondary leading-relaxed group-hover:text-text-primary transition-colors duration-300">
-                          {feature.description}
-                        </p>
-                      </div>
-                    </div>
-                  </motion.div>
+            {/* Credentials */}
+            <div
+              className="rounded-lg p-6"
+              style={{
+                background: `linear-gradient(${'#0a0d14'}, ${'#0a0d14'}) padding-box, linear-gradient(90deg, #18cade 0%, #a78bfa 50%, #f472b6 100%) border-box`,
+                border: '1px solid transparent',
+              }}
+            >
+              <h4 className="text-sm font-heading font-semibold text-text-muted uppercase tracking-wide mb-4">
+                Credenciales
+              </h4>
+              <div className="space-y-3">
+                {companyData.ceo.credentials.map((credential, index) => (
+                  <div key={index} className="flex items-center gap-3">
+                    <CheckCircle2 className="w-4 h-4 text-brand-primary flex-shrink-0" />
+                    <span className="text-text-secondary">{credential}</span>
+                  </div>
                 ))}
               </div>
-            </FadeIn>
+            </div>
+          </div>
 
-            {/* CTA Button */}
-            <FadeIn delay={0.8} direction="right">
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                onClick={() => {
-                  const contactSection = document.querySelector('#contact')
-                  contactSection?.scrollIntoView({ behavior: 'smooth' })
+          {/* Right Column - Description */}
+          <div className="space-y-8">
+            <p className="text-lg text-text-secondary leading-relaxed">
+              {companyData.about.description}
+            </p>
+
+            {/* Experience Highlight */}
+            <div
+              className="rounded-lg p-6"
+              style={{
+                background: `linear-gradient(${'#0a0d14'}, ${'#0a0d14'}) padding-box, linear-gradient(90deg, #18cade 0%, #a78bfa 50%, #f472b6 100%) border-box`,
+                border: '1px solid transparent',
+              }}
+            >
+              <h4 className="text-sm font-heading font-semibold text-text-muted uppercase tracking-wide mb-4">
+                Experiencia
+              </h4>
+              <p className="text-text-secondary leading-relaxed">
+                {companyData.history.content}
+              </p>
+            </div>
+
+            {/* Stats */}
+            <div className="grid grid-cols-3 gap-4">
+              <div
+                className="rounded-lg p-4 text-center"
+                style={{
+                  background: `linear-gradient(${'#0a0d14'}, ${'#0a0d14'}) padding-box, linear-gradient(90deg, #18cade 0%, #a78bfa 50%, #f472b6 100%) border-box`,
+                  border: '1px solid transparent',
                 }}
-                className="group relative px-8 py-4 bg-gradient-to-r from-neon-cyan to-electric-blue text-text-primary font-semibold text-lg rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 border border-neon-cyan/20 hover:border-neon-cyan/40"
               >
-                <span className="relative z-10 flex items-center gap-2">
-                  {companyData.cta}
-                  <motion.span
-                    animate={{ x: [0, 5, 0] }}
-                    transition={{
-                      duration: 1.5,
-                      repeat: Infinity,
-                      ease: 'easeInOut',
-                    }}
-                  >
-                    →
-                  </motion.span>
-                </span>
-              </motion.button>
-            </FadeIn>
+                <Calendar className="w-8 h-8 text-brand-primary mx-auto mb-2" />
+                <div className="text-2xl font-heading font-semibold text-brand-primary mb-1">
+                  10+
+                </div>
+                <div className="text-xs text-text-muted uppercase tracking-wide">
+                  Años
+                </div>
+              </div>
+              <div
+                className="rounded-lg p-4 text-center"
+                style={{
+                  background: `linear-gradient(${'#0a0d14'}, ${'#0a0d14'}) padding-box, linear-gradient(90deg, #18cade 0%, #a78bfa 50%, #f472b6 100%) border-box`,
+                  border: '1px solid transparent',
+                }}
+              >
+                <Briefcase className="w-8 h-8 text-brand-primary mx-auto mb-2" />
+                <div className="text-2xl font-heading font-semibold text-brand-primary mb-1">
+                  100+
+                </div>
+                <div className="text-xs text-text-muted uppercase tracking-wide">
+                  Proyectos
+                </div>
+              </div>
+              <div
+                className="rounded-lg p-4 text-center"
+                style={{
+                  background: `linear-gradient(${'#0a0d14'}, ${'#0a0d14'}) padding-box, linear-gradient(90deg, #18cade 0%, #a78bfa 50%, #f472b6 100%) border-box`,
+                  border: '1px solid transparent',
+                }}
+              >
+                <Users className="w-8 h-8 text-brand-primary mx-auto mb-2" />
+                <div className="text-2xl font-heading font-semibold text-brand-primary mb-1">
+                  50+
+                </div>
+                <div className="text-xs text-text-muted uppercase tracking-wide">
+                  Clientes
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
-        {/* Bottom Section - History */}
-        <FadeIn delay={1} className="mt-20">
-          <div className="max-w-4xl mx-auto text-center">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              whileHover={{ scale: 1.02, y: -5 }}
-              className="group relative p-8 lg:p-12 rounded-2xl bg-transparent border border-purple-accent/40 transition-all duration-300 hover:border-purple-accent/70"
-              style={{
-                boxShadow: '0 0 20px rgba(168, 85, 247, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.1)',
-              }}
-            >
-
-              <div className="relative z-10 flex flex-col items-center gap-8">
-                <motion.h3
-                  className="text-2xl md:text-3xl font-heading font-bold"
-                  style={{
-                    backgroundImage: 'linear-gradient(135deg, #06B6D4 0%, #3B82F6 50%, #A855F7 100%)',
-                    WebkitBackgroundClip: 'text',
-                    WebkitTextFillColor: 'transparent',
-                    backgroundClip: 'text',
-                    filter: 'drop-shadow(0 0 8px rgba(6, 182, 212, 0.4))'
-                  }}
-                >
-                  {companyData.history.title}
-                </motion.h3>
-
-                <p className="text-base sm:text-lg text-gray-300 leading-relaxed">
-                  {companyData.history.content}
+        {/* Collaboration Section */}
+        <div
+          className="rounded-lg p-8 lg:p-12"
+          style={{
+            background: `linear-gradient(${'#0a0d14'}, ${'#0a0d14'}) padding-box, linear-gradient(90deg, #18cade 0%, #a78bfa 50%, #f472b6 100%) border-box`,
+            border: '1px solid transparent',
+          }}
+        >
+          <h3 className="text-2xl font-heading font-semibold text-text-primary mb-6">
+            Colaboradores
+          </h3>
+          <div className="grid md:grid-cols-2 gap-8">
+            <div className="flex items-start gap-4">
+              <div className="w-16 h-16 bg-bg-tertiary rounded-lg flex items-center justify-center flex-shrink-0 border border-brand-primary/10">
+                <Award className="w-7 h-7 text-brand-primary" />
+              </div>
+              <div>
+                <h4 className="text-lg font-heading font-semibold text-text-primary mb-2">
+                  Ángel Solís
+                </h4>
+                <p className="text-brand-primary font-medium text-sm mb-3">
+                  Colaborador Senior
+                </p>
+                <p className="text-text-secondary text-sm leading-relaxed">
+                  Profesional con sólida experiencia en desarrollo de software e integración de soluciones tecnológicas empresariales.
                 </p>
               </div>
+            </div>
 
-              {/* Corner decorations */}
-              <div className="absolute top-4 right-4 w-4 h-4 border-t-2 border-r-2 border-cyan-accent/50 rounded-tr-lg" />
-              <div className="absolute top-4 left-4 w-4 h-4 border-t-2 border-l-2 border-cyan-accent/50 rounded-tl-lg" />
-              <div className="absolute bottom-4 right-4 w-4 h-4 border-b-2 border-r-2 border-purple-accent/50 rounded-br-lg" />
-              <div className="absolute bottom-4 left-4 w-4 h-4 border-b-2 border-l-2 border-purple-accent/50 rounded-bl-lg" />
-            </motion.div>
+            <div className="flex items-start gap-4">
+              <div className="w-16 h-16 bg-bg-tertiary rounded-lg flex items-center justify-center flex-shrink-0 border border-brand-primary/10">
+                <Building2 className="w-7 h-7 text-brand-primary" />
+              </div>
+              <div>
+                <h4 className="text-lg font-heading font-semibold text-text-primary mb-2">
+                  Red de Expertos
+                </h4>
+                <p className="text-text-secondary text-sm leading-relaxed">
+                  Trabajamos con una red de profesionales especializados en diferentes áreas tecnológicas para ofrecer soluciones completas.
+                </p>
+              </div>
+            </div>
           </div>
-        </FadeIn>
+        </div>
+
       </div>
     </section>
   )

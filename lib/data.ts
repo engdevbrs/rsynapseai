@@ -4,16 +4,16 @@
  */
 
 export const companyData = {
-  name: "RSYNAPSYSEAI",
-  tagline: "¡Transformamos Negocios!",
-  subtitle: "Potenciamos tu empresa con Inteligencia Artificial de última generación. Automatizamos procesos, optimizamos decisiones y multiplicamos resultados. Transforma la complejidad en simplicidad y lleva tu negocio al siguiente nivel.",
-  cta: "TRABAJEMOS JUNTOS",
+  name: "synapse.ai",
+  tagline: "Inteligencia Artificial para negocios",
+  subtitle: "Automatizamos procesos y optimizamos decisiones con soluciones de IA diseñadas para empresas.",
+  cta: "Contactar",
 
   // Sección: Quiénes Somos
   about: {
-    title: "Quiénes Somos",
+    title: "Sobre Nosotros",
     description:
-      "En RSYNAPSYSEAI somos una consultora especializada en el desarrollo e integración de soluciones basadas en inteligencia artificial. Nuestro enfoque combina innovación, tecnología avanzada y una comprensión profunda de la IA para crear herramientas que simplifican procesos, automatizan tareas y potencian tanto a personas como a empresas. Desde el desarrollo de software inteligente hasta la implementación de sistemas automatizados personalizados, convertimos desafíos en oportunidades a través de soluciones escalables, eficientes y a medida.",
+      "Consultora especializada en desarrollo e integración de soluciones de inteligencia artificial para empresas. Combinamos experiencia técnica con enfoque en resultados para automatizar procesos, optimizar operaciones y generar valor real.",
     percentage: 80,
   },
 
@@ -59,22 +59,22 @@ export const companyData = {
 
   // Sección: Historia
   history: {
-    title: "La historia detrás de RSYNAPSYSEAI",
+    title: "Experiencia",
     content:
-      "RSYNAPSYSEAI nació con un propósito claro: acercar la inteligencia artificial a las empresas de forma práctica, entendible y útil. Después de ver cómo muchas organizaciones se pierden entre soluciones complejas o promesas poco realistas, hemos creado una alternativa más humana y accesible. Hoy ayudamos a negocios de distintos rubros a integrar la IA en sus procesos diarios, con enfoque en resultados reales, simplicidad y rentabilidad.",
+      "Más de 10 años de experiencia en tecnología trabajando con empresas como Mercado Libre y compañías en Estados Unidos. Especializados en integrar IA de forma práctica en procesos empresariales, con enfoque en resultados medibles.",
   },
 
   // Sección: CEO Profile
   ceo: {
     name: "Rodolfo Figueroa",
-    title: "CEO RSYNAPSYSEAI",
-    bio: "Hola, soy Rodolfo Figueroa, Ingeniero en Informática y tengo un Magíster en Inteligencia Artificial. Llevo más de 10 años trabajando en tecnología, colaborando con empresas como Mercado Libre y compañías de Estados Unidos. Después de todo ese recorrido, decidí crear mi propia empresa para ayudar a otras organizaciones a mejorar, crecer y simplificar sus procesos usando herramientas tecnológicas e inteligencia artificial.",
+    title: "Fundador & CEO",
+    bio: "Ingeniero en Informática con Magíster en Inteligencia Artificial. Más de 10 años de experiencia en tecnología, trabajando con empresas como Mercado Libre y organizaciones en Estados Unidos.",
     credentials: [
       "Ingeniero en Informática",
       "Magíster en Inteligencia Artificial",
       "+10 años de experiencia",
       "Ex Mercado Libre",
-      "Colaboración con empresas en USA",
+      "Proyectos en USA",
     ],
   },
 
@@ -180,6 +180,30 @@ export const companyData = {
     address: "Santiago, Chile",
   },
 
+  // Redes Sociales
+  socialMedia: [
+    {
+      name: "LinkedIn",
+      url: "https://www.linkedin.com/company/rsynapsyseai",
+      icon: "linkedin",
+    },
+    {
+      name: "Twitter",
+      url: "https://twitter.com/rsynapsyseai",
+      icon: "twitter",
+    },
+    {
+      name: "GitHub",
+      url: "https://github.com/rsynapsyseai",
+      icon: "github",
+    },
+    {
+      name: "Instagram",
+      url: "https://www.instagram.com/synapse.ia_cl",
+      icon: "instagram",
+    },
+  ],
+
   // Footer
   footer: {
     copyright: "Derechos de Autor © 2025",
@@ -189,12 +213,12 @@ export const companyData = {
   // Navegación
   navigation: [
     { label: "Inicio", href: "#home" },
-    { label: "Servicios", href: "#services" },
     { label: "Acerca de", href: "#about" },
+    { label: "Servicios", href: "#services" },
     { label: "Proyectos", href: "#projects" },
     { label: "Misión", href: "#mission" },
     { label: "Visión", href: "#vision" },
-    { label: "Equipo", href: "#team" },
+    { label: "Contacto", href: "#contact" },
   ],
 };
 
