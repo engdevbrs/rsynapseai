@@ -166,6 +166,24 @@ body {
   will-change: transform, opacity;
 }
 
+/* Optimizaciones específicas para móvil */
+@media (max-width: 768px) {
+  .motion-div, [data-framer-motion] {
+    will-change: auto;
+    transform: translateZ(0);
+  }
+  
+  /* Reducir animaciones complejas en móvil */
+  .group:hover .group-hover\:scale-110 {
+    transform: scale(1.05);
+  }
+  
+  /* Optimizar transiciones en móvil */
+  * {
+    transition-duration: 0.2s !important;
+  }
+}
+
 /* ========================================
    TYPOGRAPHY
    ======================================== */

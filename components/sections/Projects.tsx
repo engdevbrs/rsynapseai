@@ -90,10 +90,10 @@ export default function Projects() {
         {/* Section Header */}
         <FadeIn delay={0.2} className="text-center mb-16">
           <motion.div
-            initial={{ scale: 0.9, opacity: 0 }}
-            whileInView={{ scale: 1, opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.4, ease: "easeOut" }}
             className="text-center"
           >
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-text-primary" style={{ marginBottom: 0 }}>
@@ -120,16 +120,15 @@ export default function Projects() {
                 return (
                   <motion.div
                     key={project.id}
-                    initial={{ opacity: 0, x: -30 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true, margin: "-50px" }}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, margin: "-100px" }}
                     transition={{ 
                       delay: 0.4 + index * 0.1,
-                      duration: 0.6,
-                      ease: "easeOut",
-                      type: "tween"
+                      duration: 0.3,
+                      ease: "easeOut"
                     }}
-                    whileHover={{ scale: 1.02, x: 10 }}
+                    whileHover={{ scale: 1.02 }}
                     className="group p-4 sm:p-6 rounded-3xl card-futuristic hover:border-neon-cyan/30 transition-all duration-300 cursor-pointer will-change-transform"
                     style={{ 
                       backfaceVisibility: 'hidden',
@@ -202,8 +201,8 @@ export default function Projects() {
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.6 }}
+                  viewport={{ once: true, margin: "-100px" }}
+                  transition={{ delay: 0.6, duration: 0.3, ease: "easeOut" }}
                   className="p-4 rounded-lg bg-navy-medium/50 border border-purple-accent/20 text-center"
                 >
                   <div className="text-2xl font-heading font-bold text-purple-accent mb-1">4+</div>
@@ -213,8 +212,8 @@ export default function Projects() {
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.7 }}
+                  viewport={{ once: true, margin: "-100px" }}
+                  transition={{ delay: 0.7, duration: 0.3, ease: "easeOut" }}
                   className="p-4 rounded-lg bg-navy-medium/50 border border-cyan-accent/20 text-center"
                 >
                   <div className="text-2xl font-heading font-bold text-cyan-accent mb-1">2025</div>
@@ -230,8 +229,9 @@ export default function Projects() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            whileHover={{ scale: 1.02, y: -5 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.3, ease: "easeOut" }}
+            whileHover={{ scale: 1.02 }}
             className="group relative p-8 lg:p-12 rounded-2xl bg-transparent border border-cyan-accent/40 transition-all duration-300 hover:border-cyan-accent/70"
             style={{
               boxShadow: 'none',

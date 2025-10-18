@@ -52,10 +52,10 @@ export default function Vision() {
         {/* Section Header */}
         <FadeIn delay={0.2} className="text-center mb-16">
           <motion.div
-            initial={{ scale: 0.9, opacity: 0 }}
-            whileInView={{ scale: 1, opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.4, ease: "easeOut" }}
             className="text-center"
           >
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-text-primary" style={{ marginBottom: 0 }}>
@@ -76,16 +76,15 @@ export default function Vision() {
               {companyData.vision.blocks.map((block, index) => (
                 <motion.div
                   key={block.number}
-                  initial={{ opacity: 0, x: -30 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true, margin: "-50px" }}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-100px" }}
                   transition={{ 
                     delay: 0.4 + index * 0.2,
-                    duration: 0.6,
-                    ease: "easeOut",
-                    type: "tween"
+                    duration: 0.3,
+                    ease: "easeOut"
                   }}
-                  whileHover={{ scale: 1.02, x: 10 }}
+                  whileHover={{ scale: 1.02 }}
                   className="group p-6 lg:p-8 rounded-3xl card-futuristic hover:border-neon-cyan/30 transition-all duration-300 will-change-transform"
                   style={{ 
                     backfaceVisibility: 'hidden',
@@ -145,9 +144,9 @@ export default function Vision() {
                     key={index}
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: 0.6 + index * 0.1 }}
-                    whileHover={{ scale: 1.05 }}
+                    viewport={{ once: true, margin: "-100px" }}
+                    transition={{ delay: 0.6 + index * 0.1, duration: 0.3, ease: "easeOut" }}
+                    whileHover={{ scale: 1.02 }}
                     className="p-4 rounded-lg bg-navy-dark/50 border border-cyan-accent/20 text-center group hover:border-cyan-accent/50 transition-all duration-300"
                   >
                     <item.icon className="w-8 h-8 text-cyan-accent mx-auto mb-2 group-hover:scale-110 transition-transform duration-300" />
@@ -172,11 +171,11 @@ export default function Vision() {
             ].map((stat, index) => (
               <motion.div
                 key={stat.label}
-                initial={{ opacity: 0, x: -20, y: 20 }}
-                whileInView={{ opacity: 1, x: 0, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.9 + index * 0.1, type: 'spring', stiffness: 100 }}
-                whileHover={{ scale: 1.05, x: 8, y: -5 }}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ delay: 0.9 + index * 0.1, duration: 0.3, ease: "easeOut" }}
+                whileHover={{ scale: 1.02 }}
                 className={`group relative flex items-center gap-4 p-4 rounded-2xl bg-gradient-to-br ${stat.colorScheme.bg} border ${stat.colorScheme.border} backdrop-blur-sm hover:border-opacity-80 transition-all duration-400 overflow-hidden`}
                 style={{
                   boxShadow: '0 0 20px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.1)',

@@ -227,10 +227,10 @@ export default function Hero() {
               <div className="grid grid-cols-3 gap-2 sm:gap-3 max-w-lg mx-auto lg:mx-0 pt-6">
                 {/* Stat 1 */}
                 <motion.div
-                  initial={{ opacity: 0, x: -20, y: 20 }}
-                  whileInView={{ opacity: 1, x: 0, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 1.1, type: 'spring', stiffness: 100 }}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-100px" }}
+                  transition={{ delay: 1.1, duration: 0.3, ease: "easeOut" }}
                   className="group relative flex items-center gap-2 p-2 sm:p-3 rounded-xl bg-gradient-to-br from-cyan-500/20 to-blue-500/10 border border-cyan-400/40 backdrop-blur-sm hover:border-opacity-80 transition-all duration-200 overflow-hidden"
                   style={{
                     boxShadow: '0 0 20px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.1)',
@@ -288,10 +288,10 @@ export default function Hero() {
 
                 {/* Stat 2 */}
                 <motion.div
-                  initial={{ opacity: 0, x: -20, y: 20 }}
-                  whileInView={{ opacity: 1, x: 0, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 1.2, type: 'spring', stiffness: 100 }}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-100px" }}
+                  transition={{ delay: 1.2, duration: 0.3, ease: "easeOut" }}
                   className="group relative flex items-center gap-2 p-2 sm:p-3 rounded-xl bg-gradient-to-br from-blue-500/20 to-purple-500/10 border border-blue-400/40 backdrop-blur-sm hover:border-opacity-80 transition-all duration-200 overflow-hidden"
                   style={{
                     boxShadow: '0 0 20px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.1)',
@@ -349,10 +349,10 @@ export default function Hero() {
 
                 {/* Stat 3 */}
                 <motion.div
-                  initial={{ opacity: 0, x: -20, y: 20 }}
-                  whileInView={{ opacity: 1, x: 0, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 1.3, type: 'spring', stiffness: 100 }}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-100px" }}
+                  transition={{ delay: 1.3, duration: 0.3, ease: "easeOut" }}
                   className="group relative flex items-center gap-2 p-2 sm:p-3 rounded-xl bg-gradient-to-br from-purple-500/20 to-pink-500/10 border border-purple-400/40 backdrop-blur-sm hover:border-opacity-80 transition-all duration-200 overflow-hidden"
                   style={{
                     boxShadow: '0 0 20px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.1)',

@@ -50,10 +50,10 @@ export default function Mission() {
         {/* Section Header */}
         <FadeIn delay={0.2} className="text-center mb-16">
           <motion.div
-            initial={{ scale: 0.9, opacity: 0 }}
-            whileInView={{ scale: 1, opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.4, ease: "easeOut" }}
             className="text-center"
           >
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-text-primary" style={{ marginBottom: 0 }}>
@@ -91,8 +91,8 @@ export default function Mission() {
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.6 }}
+                  viewport={{ once: true, margin: "-100px" }}
+                  transition={{ delay: 0.6, duration: 0.3, ease: "easeOut" }}
                   className="p-4 rounded-2xl card-futuristic text-center"
                 >
                   <Award className="w-6 h-6 text-neon-cyan mx-auto mb-2" />
@@ -103,8 +103,8 @@ export default function Mission() {
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.7 }}
+                  viewport={{ once: true, margin: "-100px" }}
+                  transition={{ delay: 0.7, duration: 0.3, ease: "easeOut" }}
                   className="p-4 rounded-2xl card-futuristic text-center"
                 >
                   <TrendingUp className="w-6 h-6 text-neon-cyan mx-auto mb-2" />
@@ -121,16 +121,15 @@ export default function Mission() {
               {companyData.mission.blocks.map((block, index) => (
                 <motion.div
                   key={block.number}
-                  initial={{ opacity: 0, x: 30 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true, margin: "-50px" }}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-100px" }}
                   transition={{ 
                     delay: 0.5 + index * 0.2,
-                    duration: 0.6,
-                    ease: "easeOut",
-                    type: "tween"
+                    duration: 0.3,
+                    ease: "easeOut"
                   }}
-                  whileHover={{ scale: 1.02, x: -10 }}
+                  whileHover={{ scale: 1.02 }}
                   className="group p-6 lg:p-8 rounded-3xl card-futuristic hover:border-neon-cyan/30 transition-all duration-300 will-change-transform"
                   style={{ 
                     backfaceVisibility: 'hidden',
@@ -163,8 +162,8 @@ export default function Mission() {
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.8 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ delay: 0.8, duration: 0.3, ease: "easeOut" }}
                 className="mt-8 p-6 rounded-2xl card-futuristic"
               >
                 <h4 className="text-lg font-heading font-semibold text-text-primary mb-4 flex items-center gap-2">
@@ -194,8 +193,9 @@ export default function Mission() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            whileHover={{ scale: 1.02, y: -5 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.3, ease: "easeOut" }}
+            whileHover={{ scale: 1.02 }}
             className="group relative p-8 lg:p-12 rounded-2xl bg-transparent border border-purple-accent/40 transition-all duration-300 hover:border-purple-accent/70"
             style={{
               boxShadow: 'none',
