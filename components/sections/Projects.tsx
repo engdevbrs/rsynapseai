@@ -131,6 +131,11 @@ export default function Projects() {
                     }}
                     whileHover={{ scale: 1.02, x: 10 }}
                     className="group p-4 sm:p-6 rounded-3xl card-futuristic hover:border-neon-cyan/30 transition-all duration-300 cursor-pointer will-change-transform"
+                    style={{ 
+                      backfaceVisibility: 'hidden',
+                      perspective: 1000,
+                      transformStyle: 'preserve-3d'
+                    }}
                   >
                     <div className="flex items-start space-x-3 sm:space-x-4">
                       {/* Project Icon */}

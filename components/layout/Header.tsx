@@ -186,13 +186,17 @@ export default function Header() {
           >
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
               <nav className="space-y-4">
-                {companyData.navigation.map((item, index) => (
+                {companyData.navigation.map((item) => (
                   <motion.button
                     key={item.label}
                     onClick={() => scrollToSection(item.href.replace('#', ''))}
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: index * 0.1 }}
+                    transition={{ 
+                      delay: 0.1, // Delay fijo para todos los elementos
+                      duration: 0.3,
+                      ease: "easeOut"
+                    }}
                     className={`block text-left px-4 py-3 rounded-lg font-medium transition-all duration-300 cursor-pointer hover:scale-105 hover:translate-x-2 hover:shadow-lg hover:shadow-cyan-500/20 ${
                       activeSection === item.href.replace('#', '')
                         ? 'bg-blue-primary/20 text-cyan-accent border-l-4 border-cyan-accent'
@@ -208,7 +212,11 @@ export default function Header() {
                   onClick={() => scrollToSection('contact')}
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.4 }}
+                  transition={{ 
+                    delay: 0.2, // Delay reducido para que aparezca casi al mismo tiempo
+                    duration: 0.3,
+                    ease: "easeOut"
+                  }}
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                   className="w-full mt-6 px-6 py-4 bg-gradient-to-r from-blue-primary to-cyan-accent text-white font-bold rounded-lg shadow-glow-blue cursor-pointer hover:scale-105 hover:translate-y-[-2px] hover:shadow-xl hover:shadow-cyan-500/30 transition-all duration-300"

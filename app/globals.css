@@ -152,6 +152,18 @@ body {
   font-size: var(--text-base);
   line-height: 1.6;
   overflow-x: hidden;
+  /* Optimizaciones para animaciones */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* Optimizaciones para elementos animados */
+.motion-div, [data-framer-motion] {
+  backface-visibility: hidden;
+  perspective: 1000px;
+  transform-style: preserve-3d;
+  will-change: transform, opacity;
 }
 
 /* ========================================

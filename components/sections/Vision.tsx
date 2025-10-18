@@ -87,6 +87,11 @@ export default function Vision() {
                   }}
                   whileHover={{ scale: 1.02, x: 10 }}
                   className="group p-6 lg:p-8 rounded-3xl card-futuristic hover:border-neon-cyan/30 transition-all duration-300 will-change-transform"
+                  style={{ 
+                    backfaceVisibility: 'hidden',
+                    perspective: 1000,
+                    transformStyle: 'preserve-3d'
+                  }}
                 >
                   <div className="flex items-start space-x-6">
                     {/* Number Badge */}
