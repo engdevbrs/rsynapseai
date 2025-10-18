@@ -49,7 +49,10 @@ export default function ScrollToTop() {
           whileHover={{ scale: 1.1, y: -2 }}
           whileTap={{ scale: 0.9 }}
           onClick={scrollToTop}
-          className="fixed bottom-8 right-8 z-50 w-14 h-14 bg-gradient-to-r from-neon-cyan to-electric-blue hover:from-electric-blue hover:to-purple-neon text-text-primary rounded-full shadow-2xl hover:shadow-neon-cyan-subtle transition-all duration-300 flex items-center justify-center group border-2 border-neon-cyan/30 hover:border-neon-cyan backdrop-blur-sm"
+          className="fixed bottom-8 right-8 z-50 w-14 h-14 bg-gradient-to-r from-neon-cyan to-electric-blue hover:from-electric-blue hover:to-purple-neon rounded-full shadow-2xl hover:shadow-neon-cyan-subtle transition-all duration-300 flex items-center justify-center group backdrop-blur-sm cursor-pointer"
+          style={{
+            border: '2px solid rgba(24, 202, 222, 0.3)',
+          }}
           aria-label="Volver al inicio"
         >
           <motion.div
@@ -60,7 +63,7 @@ export default function ScrollToTop() {
               ease: 'easeInOut',
             }}
           >
-            <ArrowUp className="w-6 h-6 group-hover:scale-110 transition-transform duration-300" />
+            <ArrowUp className="w-6 h-6 text-brand-primary group-hover:scale-110 transition-transform duration-300" />
           </motion.div>
         </motion.button>
       )}

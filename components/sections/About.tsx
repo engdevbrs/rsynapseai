@@ -31,8 +31,21 @@ export default function About() {
           {/* Left Column - Profile */}
           <div className="space-y-8">
             <div className="flex items-start gap-6">
-              <div className="w-24 h-24 bg-bg-secondary rounded-lg flex items-center justify-center flex-shrink-0 border border-brand-primary/20">
-                <User className="w-12 h-12 text-brand-primary" />
+              <div
+                className="w-24 h-24 rounded-lg flex items-center justify-center flex-shrink-0 overflow-hidden"
+                style={{
+                  background: `linear-gradient(${'#0a0d14'}, ${'#0a0d14'}) padding-box, linear-gradient(90deg, #18cade 0%, #4ade80 100%) border-box`,
+                  border: '2px solid transparent',
+                }}
+              >
+                <Image
+                  src="/images/profile.jpg"
+                  alt={companyData.ceo.name}
+                  width={96}
+                  height={96}
+                  className="w-full h-full object-cover"
+                  priority
+                />
               </div>
               <div>
                 <h3 className="text-2xl font-heading font-semibold text-text-primary mb-2">

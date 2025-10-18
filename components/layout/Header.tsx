@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react'
 import { Menu, X } from 'lucide-react'
 import Image from 'next/image'
 import { companyData } from '@/lib/data'
+import { motion, AnimatePresence } from 'framer-motion'
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -95,32 +96,54 @@ export default function Header() {
           {/* Desktop Navigation - Centered on large screens */}
           <div className="hidden xl:flex flex-1 justify-center">
             <nav className="flex items-center space-x-6">
-              {companyData.navigation.map((item) => (
-                <button
-                  key={item.label}
-                  onClick={() => scrollToSection(item.href.replace('#', ''))}
-                  className={`relative px-3 py-2 text-sm font-medium transition-all duration-300 cursor-pointer ${
-                    activeSection === item.href.replace('#', '')
-                      ? 'text-brand-primary'
-                      : 'text-text-secondary hover:text-brand-light'
-                  }`}
-                >
-                  {item.label}
-                  <div
-                    className={`absolute bottom-0 left-0 right-0 h-0.5 rounded-full transition-all duration-500 ease-out ${
-                      activeSection === item.href.replace('#', '')
-                        ? 'bg-brand-primary opacity-100 scale-x-100'
-                        : 'bg-transparent opacity-0 scale-x-0'
-                    }`}
-                    style={{
-                      background: activeSection === item.href.replace('#', '')
-                        ? 'linear-gradient(90deg, #18cade 0%, #4ade80 100%)'
-                        : 'transparent',
-                      transformOrigin: 'center'
-                    }}
-                  />
-                </button>
-              ))}
+              {companyData.navigation.map((item) => {
+                const isActive = activeSection === item.href.replace('#', '')
+                return (
+                  <button
+                    key={item.label}
+                    onClick={() => scrollToSection(item.href.replace('#', ''))}
+                    className="relative px-3 py-2 text-sm font-medium transition-all duration-300 cursor-pointer group"
+                  >
+                    <span
+                      className={`relative ${isActive ? '' : 'text-text-secondary'}`}
+                      style={isActive ? {
+                        background: 'linear-gradient(90deg, #18cade 0%, #4ade80 100%)',
+                        WebkitBackgroundClip: 'text',
+                        WebkitTextFillColor: 'transparent',
+                        backgroundClip: 'text',
+                      } : {}}
+                    >
+                      <span className={`${isActive ? 'opacity-0' : 'group-hover:opacity-0'} transition-opacity duration-300`}>
+                        {item.label}
+                      </span>
+                      <span
+                        className={`absolute inset-0 ${isActive ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'} transition-opacity duration-300`}
+                        style={{
+                          background: 'linear-gradient(90deg, #18cade 0%, #4ade80 100%)',
+                          WebkitBackgroundClip: 'text',
+                          WebkitTextFillColor: 'transparent',
+                          backgroundClip: 'text',
+                        }}
+                      >
+                        {item.label}
+                      </span>
+                    </span>
+                    <div
+                      className={`absolute bottom-0 left-0 right-0 h-0.5 rounded-full transition-all duration-500 ease-out ${
+                        isActive
+                          ? 'bg-brand-primary opacity-100 scale-x-100'
+                          : 'bg-transparent opacity-0 scale-x-0'
+                      }`}
+                      style={{
+                        background: isActive
+                          ? 'linear-gradient(90deg, #18cade 0%, #4ade80 100%)'
+                          : 'transparent',
+                        transformOrigin: 'center'
+                      }}
+                    />
+                  </button>
+                )
+              })}
             </nav>
           </div>
 
@@ -137,14 +160,32 @@ export default function Header() {
             {/* Mobile/Tablet Menu Button */}
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="p-2 text-text-secondary hover:text-brand-primary transition-colors duration-200 xl:hidden cursor-pointer"
+              className="p-2 text-text-secondary hover:text-brand-primary transition-colors duration-200 xl:hidden cursor-pointer relative overflow-hidden"
               aria-label="Toggle menu"
             >
-              {isMobileMenuOpen ? (
-                <X className="w-6 h-6" />
-              ) : (
-                <Menu className="w-6 h-6" />
-              )}
+              <AnimatePresence mode="wait" initial={false}>
+                {isMobileMenuOpen ? (
+                  <motion.div
+                    key="close"
+                    initial={{ rotate: -90, opacity: 0 }}
+                    animate={{ rotate: 0, opacity: 1 }}
+                    exit={{ rotate: 90, opacity: 0 }}
+                    transition={{ duration: 0.2, ease: "easeInOut" }}
+                  >
+                    <X className="w-6 h-6" />
+                  </motion.div>
+                ) : (
+                  <motion.div
+                    key="menu"
+                    initial={{ rotate: 90, opacity: 0 }}
+                    animate={{ rotate: 0, opacity: 1 }}
+                    exit={{ rotate: -90, opacity: 0 }}
+                    transition={{ duration: 0.2, ease: "easeInOut" }}
+                  >
+                    <Menu className="w-6 h-6" />
+                  </motion.div>
+                )}
+              </AnimatePresence>
             </button>
           </div>
         </div>
@@ -152,7 +193,7 @@ export default function Header() {
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className="xl:hidden bg-bg-primary/98 backdrop-blur-md border-t border-brand-primary/20">
+        <div className="xl:hidden bg-bg-primary/95 backdrop-blur-xl border-t border-brand-primary/20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
             <nav className="space-y-2">
               {companyData.navigation.map((item) => (
@@ -168,14 +209,6 @@ export default function Header() {
                   {item.label}
                 </button>
               ))}
-
-              {/* Mobile CTA Button */}
-              <button
-                onClick={() => scrollToSection('contact')}
-                className="w-full mt-4 px-6 py-4 bg-brand-primary text-white font-bold rounded-lg hover:bg-brand-light transition-colors duration-200 cursor-pointer"
-              >
-                {companyData.cta}
-              </button>
             </nav>
           </div>
         </div>

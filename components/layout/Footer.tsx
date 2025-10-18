@@ -131,25 +131,11 @@ export default function Footer() {
 
         {/* Bottom Bar */}
         <div className="border-t border-brand-primary/20 py-6">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+          <div className="flex flex-col md:flex-row items-center justify-center gap-4">
             {/* Copyright */}
             <p className="text-text-primary text-sm font-medium">
               © {new Date().getFullYear()} synapse.ai. Todos los derechos reservados.
             </p>
-
-            {/* Scroll to Top Button */}
-            <motion.button
-              onClick={scrollToTop}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="flex items-center gap-2 px-4 py-2 bg-brand-primary/10 hover:bg-brand-primary/20 border border-brand-primary/30 rounded-lg transition-all duration-300 cursor-pointer"
-              aria-label="Volver arriba"
-            >
-              <ArrowUp className="w-4 h-4 text-brand-primary" />
-              <span className="text-sm text-text-secondary">
-                Volver arriba
-              </span>
-            </motion.button>
           </div>
         </div>
       </div>

@@ -188,16 +188,6 @@ export const companyData = {
       icon: "linkedin",
     },
     {
-      name: "Twitter",
-      url: "https://twitter.com/rsynapsyseai",
-      icon: "twitter",
-    },
-    {
-      name: "GitHub",
-      url: "https://github.com/rsynapsyseai",
-      icon: "github",
-    },
-    {
       name: "Instagram",
       url: "https://www.instagram.com/synapse.ia_cl",
       icon: "instagram",

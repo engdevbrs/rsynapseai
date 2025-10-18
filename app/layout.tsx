@@ -3,6 +3,7 @@ import { Inter, Oswald, Space_Grotesk } from "next/font/google";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import ScrollToTop from "@/components/layout/ScrollToTop";
+import NeuralNetworkBackground from "@/components/ui/NeuralNetworkBackground";
 import "./globals.css";
 
 // Configuración de fuentes optimizadas
@@ -59,6 +60,11 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://rsynapsyseai.com"),
   alternates: {
     canonical: "/",
+  },
+  icons: {
+    icon: "/icons/favicon.ico",
+    shortcut: "/icons/favicon.ico",
+    apple: "/icons/favicon.ico",
   },
   openGraph: {
     type: "website",
@@ -180,10 +186,13 @@ export default function RootLayout({
       <body
         className={`${inter.variable} ${oswald.variable} ${spaceGrotesk.variable} antialiased`}
       >
-        <Header />
-        {children}
-        <Footer />
-        <ScrollToTop />
+        <NeuralNetworkBackground />
+        <div className="relative z-10">
+          <Header />
+          {children}
+          <Footer />
+          <ScrollToTop />
+        </div>
       </body>
     </html>
   );

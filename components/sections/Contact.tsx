@@ -232,11 +232,14 @@ export default function Contact() {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full bg-brand-primary text-bg-primary font-heading font-semibold py-4 px-8 rounded-lg disabled:opacity-50 disabled:cursor-not-allowed transition-colors hover:bg-brand-light flex items-center justify-center space-x-2"
+                className="w-full text-white font-heading font-semibold py-4 px-8 rounded-lg disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300 hover:scale-[1.02] flex items-center justify-center space-x-2 cursor-pointer"
+                style={{
+                  background: 'linear-gradient(90deg, #18cade 0%, #4ade80 100%)',
+                }}
               >
                 {isSubmitting ? (
                   <>
-                    <div className="w-5 h-5 border-2 border-bg-primary border-t-transparent rounded-full animate-spin" />
+                    <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" />
                     <span>Enviando...</span>
                   </>
                 ) : (
