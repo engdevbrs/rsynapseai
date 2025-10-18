@@ -13,7 +13,7 @@ export default function Vision() {
           <h2
             className="text-3xl lg:text-4xl font-heading font-semibold mb-4"
             style={{
-              background: 'linear-gradient(90deg, #18cade 0%, #a78bfa 50%, #f472b6 100%)',
+              background: 'linear-gradient(90deg, #18cade 0%, #4ade80 100%)',
               WebkitBackgroundClip: 'text',
               WebkitTextFillColor: 'transparent',
               backgroundClip: 'text',
@@ -34,7 +34,7 @@ export default function Vision() {
               key={block.number}
               className="rounded-lg p-8"
               style={{
-                background: `linear-gradient(${'#0a0d14'}, ${'#0a0d14'}) padding-box, linear-gradient(90deg, #18cade 0%, #a78bfa 50%, #f472b6 100%) border-box`,
+                background: `linear-gradient(${'#0a0d14'}, ${'#0a0d14'}) padding-box, linear-gradient(90deg, #18cade 0%, #4ade80 100%) border-box`,
                 border: '1px solid transparent',
               }}
             >

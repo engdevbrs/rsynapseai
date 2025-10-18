@@ -93,14 +93,14 @@
 @layer utilities {
   /* Global Title Styles with Gradients - Using utilities layer for highest priority */
   h1 {
-    background: linear-gradient(135deg, #0d7580 0%, #18cade 50%, #4dd9e8 100%);
+    background: linear-gradient(90deg, #18cade 0%, #4ade80 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
 
   h2 {
-    background: linear-gradient(135deg, #18cade 0%, #4dd9e8 100%);
+    background: linear-gradient(90deg, #18cade 0%, #4ade80 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;

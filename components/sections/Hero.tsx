@@ -38,7 +38,7 @@ export default function Hero() {
               <h2
                 className="text-3xl lg:text-4xl xl:text-5xl font-heading font-light leading-tight"
                 style={{
-                  background: 'linear-gradient(90deg, #18cade 0%, #a78bfa 50%, #f472b6 100%)',
+                  background: 'linear-gradient(90deg, #18cade 0%, #4ade80 100%)',
                   WebkitBackgroundClip: 'text',
                   WebkitTextFillColor: 'transparent',
                   backgroundClip: 'text',
@@ -89,7 +89,7 @@ export default function Hero() {
                 onClick={handleContactClick}
                 className="group relative px-8 py-4 font-heading font-semibold text-lg rounded-lg overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-2xl"
                 style={{
-                  background: 'linear-gradient(90deg, #18cade 0%, #a78bfa 50%, #f472b6 100%)',
+                  background: 'linear-gradient(90deg, #18cade 0%, #4ade80 100%)',
                 }}
               >
                 <span className="relative z-10 text-white">

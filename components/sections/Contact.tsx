@@ -70,7 +70,7 @@ export default function Contact() {
           <h2
             className="text-3xl lg:text-4xl font-heading font-semibold mb-4"
             style={{
-              background: 'linear-gradient(90deg, #18cade 0%, #a78bfa 50%, #f472b6 100%)',
+              background: 'linear-gradient(90deg, #18cade 0%, #4ade80 100%)',
               WebkitBackgroundClip: 'text',
               WebkitTextFillColor: 'transparent',
               backgroundClip: 'text',
@@ -114,7 +114,7 @@ export default function Contact() {
                       rel="noopener noreferrer"
                       className="group relative w-12 h-12 rounded-lg flex items-center justify-center transition-all duration-300 cursor-pointer"
                       style={{
-                        background: 'linear-gradient(#0f1936, #0f1936) padding-box, linear-gradient(90deg, #18cade 0%, #a78bfa 50%, #f472b6 100%) border-box',
+                        background: 'linear-gradient(#0f1936, #0f1936) padding-box, linear-gradient(90deg, #18cade 0%, #4ade80 100%) border-box',
                         border: '1px solid transparent',
                       }}
                       aria-label={social.name}

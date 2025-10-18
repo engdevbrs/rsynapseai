@@ -114,7 +114,7 @@ export default function Header() {
                     }`}
                     style={{
                       background: activeSection === item.href.replace('#', '')
-                        ? 'linear-gradient(90deg, #18cade 0%, #a78bfa 50%, #f472b6 100%)'
+                        ? 'linear-gradient(90deg, #18cade 0%, #4ade80 100%)'
                         : 'transparent',
                       transformOrigin: 'center'
                     }}
