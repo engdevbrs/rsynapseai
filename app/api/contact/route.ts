@@ -1,6 +1,34 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { ContactFormData, contactFormSchema } from '@/lib/validations'
-import { companyData } from '@/lib/data'
+import nodemailer from 'nodemailer'
+
+// Configuración del transporter de Nodemailer
+const transporter = nodemailer.createTransport({
+  service: 'gmail',
+  auth: {
+    user: process.env.EMAIL_USER || 'rsynapseai@gmail.com',
+    pass: process.env.EMAIL_PASS || process.env.GMAIL_APP_PASSWORD,
+  },
+})
+
+// Función para enviar email
+async function sendEmail(data: ContactFormData) {
+  const mailOptions = {
+    from: process.env.EMAIL_USER || 'rsynapseai@gmail.com',
+    to: 'rsynapseai@gmail.com',
+    subject: `Nuevo mensaje de contacto de ${data.name}`,
+    html: generateEmailTemplate(data),
+  }
+
+  try {
+    const result = await transporter.sendMail(mailOptions)
+    console.log('✅ Email enviado exitosamente:', result.messageId)
+    return result
+  } catch (error) {
+    console.error('❌ Error al enviar email:', error)
+    throw error
+  }
+}
 
 export async function POST(request: NextRequest) {
   try {
@@ -9,19 +37,13 @@ export async function POST(request: NextRequest) {
     // Validar los datos del formulario
     const validatedData = contactFormSchema.parse(body)
 
-    // Simular envío de email (aquí integrarías con un servicio real como Resend, SendGrid, etc.)
     console.log('📧 Nuevo mensaje de contacto recibido:', {
       timestamp: new Date().toISOString(),
       data: validatedData,
     })
 
-    // En un entorno de producción, aquí enviarías el email real:
-    // await sendEmail({
-    //   to: companyData.contact.email,
-    //   from: 'noreply@rsynapsyseai.com',
-    //   subject: `Nuevo mensaje de contacto de ${validatedData.name}`,
-    //   html: generateEmailTemplate(validatedData),
-    // })
+    // Enviar email real
+    await sendEmail(validatedData)
 
     // Respuesta de éxito
     return NextResponse.json(
@@ -50,11 +72,24 @@ export async function POST(request: NextRequest) {
       )
     }
 
+    // Si es un error de envío de email
+    if (error instanceof Error && error.message.includes('email')) {
+      return NextResponse.json(
+        {
+          success: false,
+          message: 'Error al enviar el mensaje. Por favor, inténtalo de nuevo.',
+          error: process.env.NODE_ENV === 'development' ? error.message : undefined,
+        },
+        { status: 500 }
+      )
+    }
+
     // Error interno del servidor
     return NextResponse.json(
       {
         success: false,
         message: 'Error interno del servidor. Por favor, inténtalo de nuevo.',
+        error: process.env.NODE_ENV === 'development' ? error : undefined,
       },
       { status: 500 }
     )

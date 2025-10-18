@@ -8,6 +8,7 @@
 :root {
   /* === COLORS === */
   /* Dark Purple Backgrounds - Fondos principales */
+  --navy-dark: #0F0F23;
   --bg-primary: #1A1A33;
   --bg-secondary: #2A2A4A;
   --bg-tertiary: #3A3A5A;
@@ -21,10 +22,12 @@
   --neon-cyan: #00FFFF;
   --neon-cyan-glow: #00FFFF;
   --neon-cyan-subtle: rgba(0, 255, 255, 0.3);
+  --cyan-accent: #00FFFF;
 
   /* Electric Blue - Acentos secundarios */
   --electric-blue: #00BFFF;
   --electric-blue-glow: #00BFFF;
+  --blue-primary: #3B82F6;
   --electric-blue-subtle: rgba(0, 191, 255, 0.2);
 
   /* Neon Purple - Acentos de innovación */
@@ -148,7 +151,7 @@ body {
   font-family: var(--font-body);
   font-size: var(--text-base);
   line-height: 1.6;
-  overflow-x: auto;
+  overflow-x: hidden;
 }
 
 /* ========================================
@@ -624,6 +627,13 @@ section {
   }
 }
 
+/* Custom breakpoint for extra small screens */
+@media (min-width: 475px) {
+  .xs\:block {
+    display: block;
+  }
+}
+
 /* ========================================
    ACCESSIBILITY
    ======================================== */
@@ -645,4 +655,24 @@ section {
 :focus-visible {
   outline: 2px solid var(--blue-primary);
   outline-offset: 2px;
+}
+
+/* ========================================
+   TEXT UTILITIES
+   ======================================== */
+
+.text-cyan-accent {
+  color: var(--neon-cyan);
+}
+
+.text-gray-300 {
+  color: #d1d5db;
+}
+
+.text-gray-400 {
+  color: #9ca3af;
+}
+
+.text-white {
+  color: #ffffff;
 }

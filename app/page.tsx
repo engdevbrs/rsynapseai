@@ -9,7 +9,7 @@ import Contact from '@/components/sections/Contact'
 
 export default function HomePage() {
   return (
-    <main className="min-h-screen">
+    <main className="min-h-screen pt-16 lg:pt-20">
       {/* Hero Section */}
       <Hero />
 

@@ -106,7 +106,7 @@ export default function Hero() {
             {/* Main Title with Stagger Animation */}
             <div className="space-y-3">
               <FadeIn delay={0.2} direction="right">
-                <h1 className="text-5xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-heading font-bold leading-tight">
+                <h1 className="text-6xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-heading font-bold leading-tight">
                   <span className="block text-text-primary">RSYNAPSYSEAI</span>
                   <span className="block text-gradient-title">
                     INTELLIGENCE
@@ -136,7 +136,7 @@ export default function Hero() {
                     className="text-gradient-title"
                   />
                 </p>
-                <p className="text-base sm:text-lg md:text-xl text-gray-300 max-w-2xl mx-auto lg:mx-0">
+                <p className="text-xl sm:text-2xl md:text-3xl font-heading text-white min-h-[4rem] flex items-center justify-center lg:justify-start">
                   {companyData.subtitle}
                 </p>
               </div>
@@ -144,13 +144,13 @@ export default function Hero() {
 
             {/* CTA Buttons - Enhanced */}
             <FadeIn delay={0.8} direction="right">
-              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+              <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 md:gap-4 lg:gap-6 justify-center lg:justify-start max-w-2xl mx-auto lg:mx-0">
                 {/* Primary CTA Button */}
                 <motion.button
                   onClick={handleContactClick}
                   whileHover={{ scale: 1.05, y: -3 }}
                   whileTap={{ scale: 0.95 }}
-                  className="group relative px-6 sm:px-10 py-4 sm:py-5 bg-gradient-to-r from-cyan-400 via-cyan-300 to-cyan-400 text-white font-bold text-base sm:text-lg rounded-[2rem] overflow-hidden transition-all duration-300"
+                  className="group relative px-3 sm:px-4 md:px-6 lg:px-8 xl:px-10 py-2 sm:py-3 md:py-4 lg:py-5 bg-gradient-to-r from-cyan-400 via-cyan-300 to-cyan-400 text-white font-bold text-xs sm:text-sm md:text-base lg:text-lg rounded-[1.5rem] sm:rounded-[1.75rem] md:rounded-[2rem] overflow-hidden transition-all duration-300 w-full sm:w-auto"
                   style={{
                     boxShadow: '0 0 20px rgba(6, 182, 212, 0.4), 0 10px 25px -5px rgba(6, 182, 212, 0.3), inset 0 2px 0 rgba(255, 255, 255, 0.3)',
                     backgroundSize: '200% 100%',
@@ -188,7 +188,7 @@ export default function Hero() {
                   onClick={scrollToNextSection}
                   whileHover={{ scale: 1.05, y: -3 }}
                   whileTap={{ scale: 0.95 }}
-                  className="group relative px-6 sm:px-10 py-4 sm:py-5 bg-gradient-to-r from-purple-accent via-purple-500 to-purple-accent text-white font-bold text-base sm:text-lg rounded-[2rem] overflow-hidden transition-all duration-300"
+                  className="group relative px-3 sm:px-4 md:px-6 lg:px-8 xl:px-10 py-2 sm:py-3 md:py-4 lg:py-5 bg-gradient-to-r from-purple-accent via-purple-500 to-purple-accent text-white font-bold text-xs sm:text-sm md:text-base lg:text-lg rounded-[1.5rem] sm:rounded-[1.75rem] md:rounded-[2rem] overflow-hidden transition-all duration-300 w-full sm:w-auto"
                   style={{
                     boxShadow: '0 0 20px rgba(168, 85, 247, 0.3), 0 10px 25px -5px rgba(168, 85, 247, 0.2), inset 0 2px 0 rgba(255, 255, 255, 0.3)',
                     backgroundSize: '200% 100%',

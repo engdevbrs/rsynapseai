@@ -80,32 +80,6 @@ export default function Footer() {
                 <p className="text-gray-300 leading-relaxed max-w-md">
                   {companyData.subtitle}
                 </p>
-
-                {/* Contact Info */}
-                <div className="space-y-3">
-                  <div className="flex items-center space-x-3 text-gray-300 hover:text-cyan-accent transition-colors duration-300">
-                    <Mail className="w-5 h-5 text-blue-primary" />
-                    <a 
-                      href={`mailto:${companyData.contact.email}`}
-                      className="text-sm"
-                    >
-                      {companyData.contact.email}
-                    </a>
-                  </div>
-                  <div className="flex items-center space-x-3 text-gray-300 hover:text-cyan-accent transition-colors duration-300">
-                    <Phone className="w-5 h-5 text-blue-primary" />
-                    <a 
-                      href={`tel:${companyData.contact.phone}`}
-                      className="text-sm"
-                    >
-                      {companyData.contact.phone}
-                    </a>
-                  </div>
-                  <div className="flex items-center space-x-3 text-gray-300 hover:text-cyan-accent transition-colors duration-300">
-                    <MapPin className="w-5 h-5 text-blue-primary" />
-                    <span className="text-sm">{companyData.contact.address}</span>
-                  </div>
-                </div>
               </div>
             </FadeIn>
 
@@ -120,10 +94,13 @@ export default function Footer() {
                     <motion.button
                       key={item.label}
                       onClick={() => scrollToSection(item.href.replace('#', ''))}
-                      whileHover={{ x: 5 }}
-                      className="block text-gray-300 hover:text-cyan-accent transition-colors duration-300 text-sm"
+                      whileHover={{ x: 5, scale: 1.02 }}
+                      className="block text-gray-300 hover:text-cyan-accent transition-all duration-300 text-sm font-medium group"
                     >
-                      {item.label}
+                      <span className="relative">
+                        {item.label}
+                        <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-cyan-accent to-blue-primary group-hover:w-full transition-all duration-300"></span>
+                      </span>
                     </motion.button>
                   ))}
                 </nav>
@@ -140,10 +117,13 @@ export default function Footer() {
                   {companyData.services.slice(0, 4).map((service) => (
                     <motion.div
                       key={service.id}
-                      whileHover={{ x: 5 }}
-                      className="text-gray-300 hover:text-cyan-accent transition-colors duration-300 text-sm cursor-pointer"
+                      whileHover={{ x: 5, scale: 1.02 }}
+                      className="text-gray-300 hover:text-cyan-accent transition-all duration-300 text-sm cursor-pointer font-medium group"
                     >
-                      {service.title}
+                      <span className="relative">
+                        {service.title}
+                        <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-cyan-accent to-blue-primary group-hover:w-full transition-all duration-300"></span>
+                      </span>
                     </motion.div>
                   ))}
                 </div>

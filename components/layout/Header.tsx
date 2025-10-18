@@ -2,35 +2,29 @@
 
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Menu, X, ChevronDown } from 'lucide-react'
-import FadeIn from '@/components/animations/FadeIn'
+import { Menu, X } from 'lucide-react'
+import Image from 'next/image'
 import { companyData } from '@/lib/data'
-import { useClientOnly } from '@/hooks/useClientOnly'
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const [activeSection, setActiveSection] = useState('home')
-  const isClient = useClientOnly()
 
   // Detectar scroll para cambiar el estilo del header
   useEffect(() => {
-    if (!isClient) return
-
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50)
     }
 
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
-  }, [isClient])
+  }, [])
 
   // Detectar sección activa para resaltar en navegación
   useEffect(() => {
-    if (!isClient) return
-
     const handleScroll = () => {
-      const sections = ['home', 'services', 'about', 'contact']
+      const sections = ['home', 'services', 'about', 'projects', 'mission', 'vision', 'team', 'contact']
       const scrollPosition = window.scrollY + 100
 
       for (const section of sections) {
@@ -47,14 +41,26 @@ export default function Header() {
 
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
-  }, [isClient])
+  }, [])
 
   // Función para navegar a secciones
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId)
+    
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' })
+      // Cerrar el menú móvil primero
       setIsMobileMenuOpen(false)
+      
+      // Pequeño delay para que el menú se cierre antes del scroll
+      setTimeout(() => {
+        element.scrollIntoView({ 
+          behavior: 'smooth',
+          block: 'start',
+          inline: 'nearest'
+        })
+      }, 100)
+    } else {
+      console.error('Sección no encontrada:', sectionId)
     }
   }
 
@@ -63,101 +69,81 @@ export default function Header() {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.6, ease: 'easeOut' }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
         isScrolled
           ? 'bg-navy-dark/95 backdrop-blur-md border-b border-blue-primary/20 shadow-lg'
           : 'bg-transparent'
       }`}
     >
-      <div className="container mx-auto px-4 lg:px-8">
-        <div className="flex items-center justify-between h-16 lg:h-20">
-          {/* Logo */}
-          <FadeIn delay={0.2} direction="left">
+      {/* Container with proper constraints */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center h-16 lg:h-20">
+          
+          {/* Logo Section - Left aligned */}
+          <div className="flex-shrink-0">
             <motion.button
               onClick={() => scrollToSection('home')}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="flex items-center space-x-3 group"
+              className="flex items-center space-x-2 sm:space-x-3 group"
             >
-              <div className="w-10 h-10 lg:w-12 lg:h-12 bg-gradient-to-br from-blue-primary to-cyan-accent rounded-lg flex items-center justify-center group-hover:from-cyan-accent group-hover:to-purple-accent transition-all duration-300">
-                <span className="text-white font-bold text-lg lg:text-xl">S</span>
+              <div className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 group-hover:scale-110 transition-all duration-300">
+                <Image 
+                  src="/logo-compact.svg" 
+                  alt="RSYNAPSYSEAI Logo" 
+                  width={48}
+                  height={48}
+                  className="w-full h-full"
+                  priority
+                />
               </div>
-              <div className="hidden sm:block">
-                <h1 className="text-xl lg:text-2xl font-heading font-bold text-white group-hover:text-cyan-accent transition-colors duration-300">
-                  RSYNAPSYSEAI
-                </h1>
+              <div className="hidden md:block">
                 <p className="text-xs text-gray-400 group-hover:text-gray-300 transition-colors duration-300">
                   AI Solutions
                 </p>
               </div>
             </motion.button>
-          </FadeIn>
+          </div>
 
-          {/* Desktop Navigation */}
-          <FadeIn delay={0.4} direction="right" className="hidden lg:block">
-            <nav className="flex items-center space-x-8">
-              {companyData.navigation.map((item, index) => (
-                <motion.button
+          {/* Desktop Navigation - Centered on large screens */}
+          <div className="hidden xl:flex flex-1 justify-center">
+            <nav className="flex items-center space-x-6">
+              {companyData.navigation.map((item) => (
+                <button
                   key={item.label}
                   onClick={() => scrollToSection(item.href.replace('#', ''))}
-                  whileHover={{ y: -2 }}
-                  whileTap={{ y: 0 }}
-                  className={`relative px-4 py-2 text-sm font-medium transition-all duration-300 ${
-                    activeSection === item.href.replace('#', '')
-                      ? 'text-cyan-accent'
-                      : 'text-gray-300 hover:text-white'
-                  }`}
+                  className="relative px-3 py-2 text-sm font-medium text-white hover:text-cyan-400 transition-all duration-300 cursor-pointer hover:scale-105 hover:translate-y-[-2px] hover:bg-white/5 hover:rounded-md hover:shadow-lg hover:shadow-cyan-500/20"
+                  style={{
+                    color: activeSection === item.href.replace('#', '') ? '#00FFFF' : '#E5E7EB'
+                  }}
                 >
                   {item.label}
                   {activeSection === item.href.replace('#', '') && (
-                    <motion.div
-                      layoutId="activeIndicator"
-                      className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-blue-primary to-cyan-accent rounded-full"
-                      initial={false}
-                      transition={{ type: 'spring', stiffness: 300, damping: 30 }}
-                    />
+                    <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-blue-500 to-cyan-400 rounded-full" />
                   )}
-                </motion.button>
+                </button>
               ))}
             </nav>
-          </FadeIn>
+          </div>
 
-          {/* CTA Button - Desktop */}
-          <FadeIn delay={0.6} direction="right" className="hidden lg:block">
-            <motion.button
+          {/* CTA and Menu Section - Right aligned */}
+          <div className="flex items-center space-x-2 sm:space-x-4 ml-auto">
+            {/* CTA Button - Hidden on very small screens */}
+            <button
               onClick={() => scrollToSection('contact')}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="group relative px-6 py-3 bg-gradient-to-r from-blue-primary to-cyan-accent text-white font-bold text-sm rounded-lg overflow-hidden shadow-glow-blue hover:shadow-glow-cyan transition-all duration-300"
+              className="hidden xs:block relative px-4 py-2 bg-gradient-to-r from-blue-500 to-cyan-400 text-white font-semibold text-xs sm:text-sm rounded-lg hover:from-cyan-400 hover:to-blue-500 transition-all duration-500 ease-out shadow-lg hover:shadow-xl cursor-pointer hover:scale-105 hover:translate-y-[-3px] hover:shadow-cyan-500/40 hover:brightness-110 transform-gpu overflow-hidden group"
             >
-              <span className="relative z-10 flex items-center gap-2">
-                {companyData.cta}
-                <motion.span
-                  animate={{ x: [0, 3, 0] }}
-                  transition={{
-                    duration: 1.5,
-                    repeat: Infinity,
-                    ease: 'easeInOut',
-                  }}
-                >
-                  →
-                </motion.span>
-              </span>
-              <motion.div
-                className="absolute inset-0 bg-gradient-to-r from-cyan-accent to-purple-accent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                initial={false}
-              />
-            </motion.button>
-          </FadeIn>
+              <span className="relative z-10">Contacto</span>
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-out"></div>
+            </button>
 
-          {/* Mobile Menu Button */}
-          <FadeIn delay={0.4} direction="right" className="lg:hidden">
+            {/* Mobile/Tablet Menu Button */}
             <motion.button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="p-2 text-gray-300 hover:text-white transition-colors duration-300"
-              aria-label="Toggle mobile menu"
+              className="p-2 text-gray-300 hover:text-white transition-colors duration-300 xl:hidden"
+              aria-label="Toggle menu"
             >
               <AnimatePresence mode="wait">
                 {isMobileMenuOpen ? (
@@ -183,7 +169,7 @@ export default function Header() {
                 )}
               </AnimatePresence>
             </motion.button>
-          </FadeIn>
+          </div>
         </div>
       </div>
 
@@ -195,9 +181,9 @@ export default function Header() {
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3, ease: 'easeInOut' }}
-            className="lg:hidden bg-navy-dark/98 backdrop-blur-md border-t border-blue-primary/20"
+            className="xl:hidden bg-navy-dark/98 backdrop-blur-md border-t border-blue-primary/20"
           >
-            <div className="container mx-auto px-4 py-6">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
               <nav className="space-y-4">
                 {companyData.navigation.map((item, index) => (
                   <motion.button
@@ -206,8 +192,7 @@ export default function Header() {
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: index * 0.1 }}
-                    whileHover={{ x: 10 }}
-                    className={`block w-full text-left px-4 py-3 rounded-lg font-medium transition-all duration-300 ${
+                    className={`block text-left px-4 py-3 rounded-lg font-medium transition-all duration-300 cursor-pointer hover:scale-105 hover:translate-x-2 hover:shadow-lg hover:shadow-cyan-500/20 ${
                       activeSection === item.href.replace('#', '')
                         ? 'bg-blue-primary/20 text-cyan-accent border-l-4 border-cyan-accent'
                         : 'text-gray-300 hover:text-white hover:bg-navy-medium/50'
@@ -225,7 +210,7 @@ export default function Header() {
                   transition={{ delay: 0.4 }}
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
-                  className="w-full mt-6 px-6 py-4 bg-gradient-to-r from-blue-primary to-cyan-accent text-white font-bold rounded-lg shadow-glow-blue"
+                  className="w-full mt-6 px-6 py-4 bg-gradient-to-r from-blue-primary to-cyan-accent text-white font-bold rounded-lg shadow-glow-blue cursor-pointer hover:scale-105 hover:translate-y-[-2px] hover:shadow-xl hover:shadow-cyan-500/30 transition-all duration-300"
                 >
                   {companyData.cta}
                 </motion.button>

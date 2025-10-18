@@ -188,10 +188,13 @@ export const companyData = {
 
   // Navegación
   navigation: [
-    { label: "Home", href: "#home" },
-    { label: "Service", href: "#services" },
-    { label: "About Us", href: "#about" },
-    { label: "Contact", href: "#contact" },
+    { label: "Inicio", href: "#home" },
+    { label: "Servicios", href: "#services" },
+    { label: "Acerca de", href: "#about" },
+    { label: "Proyectos", href: "#projects" },
+    { label: "Misión", href: "#mission" },
+    { label: "Visión", href: "#vision" },
+    { label: "Equipo", href: "#team" },
   ],
 };
 
