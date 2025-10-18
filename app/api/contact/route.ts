@@ -2,30 +2,79 @@ import { NextRequest, NextResponse } from 'next/server'
 import { ContactFormData, contactFormSchema } from '@/lib/validations'
 import nodemailer from 'nodemailer'
 
-// Configuración del transporter de Nodemailer
-const transporter = nodemailer.createTransport({
-  service: 'gmail',
-  auth: {
-    user: process.env.EMAIL_USER || 'rsynapseai@gmail.com',
-    pass: process.env.EMAIL_PASS || process.env.GMAIL_APP_PASSWORD,
-  },
-})
+// Función para crear transporter con credenciales validadas
+function createTransporter() {
+  const emailUser = process.env.EMAIL_USER
+  const emailPass = process.env.EMAIL_PASS || process.env.GMAIL_APP_PASSWORD
+  
+  if (!emailUser || !emailPass) {
+    throw new Error('Credenciales de email no configuradas')
+  }
+  
+  return nodemailer.createTransport({
+    service: 'gmail',
+    auth: {
+      user: emailUser,
+      pass: emailPass,
+    },
+  })
+}
+
+// Verificar configuración de email
+function validateEmailConfig() {
+  const emailUser = process.env.EMAIL_USER
+  const emailPass = process.env.EMAIL_PASS || process.env.GMAIL_APP_PASSWORD
+  
+  if (!emailUser) {
+    throw new Error('EMAIL_USER no está configurado. Configura la variable de entorno EMAIL_USER')
+  }
+  
+  if (!emailPass) {
+    throw new Error('EMAIL_PASS o GMAIL_APP_PASSWORD no está configurado. Configura una de estas variables de entorno')
+  }
+  
+  return { emailUser, emailPass }
+}
 
 // Función para enviar email
 async function sendEmail(data: ContactFormData) {
+  // Validar configuración antes de enviar
+  validateEmailConfig()
+  
+  // Crear transporter con credenciales validadas
+  const transporter = createTransporter()
+  
   const mailOptions = {
-    from: process.env.EMAIL_USER || 'rsynapseai@gmail.com',
+    from: process.env.EMAIL_USER,
     to: 'rsynapseai@gmail.com',
     subject: `Nuevo mensaje de contacto de ${data.name}`,
     html: generateEmailTemplate(data),
   }
 
   try {
+    // Verificar conexión del transporter
+    await transporter.verify()
+    console.log('✅ Conexión SMTP verificada correctamente')
+    
     const result = await transporter.sendMail(mailOptions)
     console.log('✅ Email enviado exitosamente:', result.messageId)
     return result
   } catch (error) {
     console.error('❌ Error al enviar email:', error)
+    
+    // Proporcionar mensajes de error más específicos
+    if (error instanceof Error) {
+      if (error.message.includes('Invalid login') || error.message.includes('EAUTH')) {
+        throw new Error('Credenciales de email inválidas. Verifica EMAIL_USER y EMAIL_PASS')
+      } else if (error.message.includes('Connection timeout')) {
+        throw new Error('Timeout de conexión con el servidor de email')
+      } else if (error.message.includes('Authentication failed')) {
+        throw new Error('Autenticación fallida. Verifica las credenciales de Gmail')
+      } else if (error.message.includes('Missing credentials')) {
+        throw new Error('Credenciales de email faltantes. Configura EMAIL_USER y EMAIL_PASS')
+      }
+    }
+    
     throw error
   }
 }
@@ -41,6 +90,21 @@ export async function POST(request: NextRequest) {
       timestamp: new Date().toISOString(),
       data: validatedData,
     })
+
+    // Verificar configuración de email antes de intentar enviar
+    try {
+      validateEmailConfig()
+    } catch (configError) {
+      console.error('❌ Error de configuración de email:', configError)
+      return NextResponse.json(
+        {
+          success: false,
+          message: 'Configuración de email no disponible. Contacta al administrador.',
+          error: process.env.NODE_ENV === 'development' ? (configError instanceof Error ? configError.message : String(configError)) : undefined,
+        },
+        { status: 500 }
+      )
+    }
 
     // Enviar email real
     await sendEmail(validatedData)
@@ -72,8 +136,20 @@ export async function POST(request: NextRequest) {
       )
     }
 
+    // Si es un error de configuración de email
+    if (error instanceof Error && error.message.includes('Configuración de email')) {
+      return NextResponse.json(
+        {
+          success: false,
+          message: 'Configuración de email no disponible. Contacta al administrador.',
+          error: process.env.NODE_ENV === 'development' ? error.message : undefined,
+        },
+        { status: 500 }
+      )
+    }
+
     // Si es un error de envío de email
-    if (error instanceof Error && error.message.includes('email')) {
+    if (error instanceof Error && (error.message.includes('email') || error.message.includes('SMTP') || error.message.includes('Gmail'))) {
       return NextResponse.json(
         {
           success: false,
