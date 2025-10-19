@@ -25,7 +25,7 @@ function createTransporter() {
   } else {
     // Configuración para SiteGround u otros proveedores
     return nodemailer.createTransport({
-      host: process.env.SMTP_HOST || 'smtp.siteground.com',
+      host: process.env.SMTP_HOST || 'gtxm1002.siteground.biz',
       port: parseInt(process.env.SMTP_PORT || '465'),
       secure: true, // true para 465, false para otros puertos
       auth: {
