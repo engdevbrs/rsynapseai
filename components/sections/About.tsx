@@ -2,7 +2,7 @@
 
 import Image from 'next/image'
 import { companyData } from '@/lib/data'
-import { Building2, User, Users, Award, Calendar, Briefcase, CheckCircle2 } from 'lucide-react'
+import { Building2, User, Users, Award, Calendar, Briefcase, CheckCircle2, Linkedin } from 'lucide-react'
 
 export default function About() {
   return (
@@ -39,7 +39,7 @@ export default function About() {
                 }}
               >
                 <Image
-                  src="/images/profile.jpg"
+                  src="/images/profile.png"
                   alt={companyData.ceo.name}
                   width={96}
                   height={96}
@@ -164,23 +164,50 @@ export default function About() {
           }}
         >
           <h3 className="text-2xl font-heading font-semibold text-text-primary mb-6">
-            Colaboradores
+            Equipo Técnico
           </h3>
           <div className="grid md:grid-cols-2 gap-8">
             <div className="flex items-start gap-4">
               <div className="w-16 h-16 bg-bg-tertiary rounded-lg flex items-center justify-center flex-shrink-0 border border-brand-primary/10">
                 <Award className="w-7 h-7 text-brand-primary" />
               </div>
-              <div>
+              <div className="flex-1">
                 <h4 className="text-lg font-heading font-semibold text-text-primary mb-2">
-                  Ángel Solís
+                  Boris Rioseco Elgueta
                 </h4>
                 <p className="text-brand-primary font-medium text-sm mb-3">
-                  Colaborador Senior
+                  Coordinador de Equipo
                 </p>
-                <p className="text-text-secondary text-sm leading-relaxed">
-                  Profesional con sólida experiencia en desarrollo de software e integración de soluciones tecnológicas empresariales.
+
+                {/* Badges */}
+                <div className="flex flex-wrap gap-2 mb-3">
+                  <span className="px-3 py-1 text-xs font-medium rounded-full bg-brand-primary/10 text-brand-primary border border-brand-primary/20">
+                    Desarrollador Senior
+                  </span>
+                  <span className="px-3 py-1 text-xs font-medium rounded-full bg-brand-primary/10 text-brand-primary border border-brand-primary/20">
+                    IA Aplicada
+                  </span>
+                </div>
+
+                <p className="text-text-secondary text-sm leading-relaxed mb-4">
+                  Profesional apasionado por la tecnología y la resolución de problemas, con una sólida formación técnica y amplia experiencia en diversos proyectos. Comprometido con el aprendizaje continuo y la excelencia en cada proyecto en el que participa.
                 </p>
+
+                {/* LinkedIn Button */}
+                <a
+                  href="https://www.linkedin.com/in/borisfre/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 cursor-pointer hover:scale-105"
+                  style={{
+                    background: 'linear-gradient(#0a0d14, #0a0d14) padding-box, linear-gradient(90deg, #18cade 0%, #4ade80 100%) border-box',
+                    border: '1px solid transparent',
+                    color: '#18cade',
+                  }}
+                >
+                  <Linkedin className="w-4 h-4" />
+                  <span>Ver perfil en LinkedIn</span>
+                </a>
               </div>
             </div>
 

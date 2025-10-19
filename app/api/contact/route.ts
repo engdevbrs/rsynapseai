@@ -6,18 +6,34 @@ import nodemailer from 'nodemailer'
 function createTransporter() {
   const emailUser = process.env.EMAIL_USER
   const emailPass = process.env.EMAIL_PASS || process.env.GMAIL_APP_PASSWORD
-  
+
   if (!emailUser || !emailPass) {
     throw new Error('Credenciales de email no configuradas')
   }
-  
-  return nodemailer.createTransport({
-    service: 'gmail',
-    auth: {
-      user: emailUser,
-      pass: emailPass,
-    },
-  })
+
+  // Detectar si es Gmail o SiteGround
+  const isGmail = emailUser.includes('@gmail.com')
+
+  if (isGmail) {
+    return nodemailer.createTransport({
+      service: 'gmail',
+      auth: {
+        user: emailUser,
+        pass: emailPass,
+      },
+    })
+  } else {
+    // Configuración para SiteGround u otros proveedores
+    return nodemailer.createTransport({
+      host: process.env.SMTP_HOST || 'smtp.siteground.com',
+      port: parseInt(process.env.SMTP_PORT || '465'),
+      secure: true, // true para 465, false para otros puertos
+      auth: {
+        user: emailUser,
+        pass: emailPass,
+      },
+    })
+  }
 }
 
 // Verificar configuración de email
@@ -46,7 +62,7 @@ async function sendEmail(data: ContactFormData) {
   
   const mailOptions = {
     from: process.env.EMAIL_USER,
-    to: 'rsynapseai@gmail.com',
+    to: 'contacto@rsynapseai.com',
     subject: `Nuevo mensaje de contacto de ${data.name}`,
     html: generateEmailTemplate(data),
   }
@@ -183,7 +199,7 @@ function generateEmailTemplate(data: ContactFormData) {
         <p><strong>Nombre:</strong> ${data.name}</p>
         <p><strong>Email:</strong> ${data.email}</p>
         ${data.phone ? `<p><strong>Teléfono:</strong> ${data.phone}</p>` : ''}
-        ${data.company ? `<p><strong>Empresa:</strong> ${data.company}</p>` : ''}
+        ${data.company ? `<p><strong>Entidad:</strong> ${data.company}</p>` : ''}
       </div>
       
       <div style="background: #f8f9fa; padding: 20px; border-radius: 8px; margin: 20px 0;">

@@ -194,17 +194,17 @@ export default function Contact() {
                 )}
               </div>
 
-              {/* Empresa */}
+              {/* Entidad */}
               <div>
                 <label htmlFor="company" className="block text-sm font-medium text-text-secondary mb-2">
-                  Empresa (Opcional)
+                  Entidad (Opcional)
                 </label>
                 <input
                   {...register('company')}
                   type="text"
                   id="company"
                   className="w-full px-4 py-3 bg-bg-secondary border border-brand-primary/20 rounded-lg text-text-primary placeholder-text-muted focus:outline-none focus:ring-2 focus:ring-brand-primary focus:border-brand-primary transition-colors"
-                  placeholder="Nombre de tu empresa"
+                  placeholder="Tu empresa, organización o nombre"
                 />
               </div>
 
