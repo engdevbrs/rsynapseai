@@ -5,15 +5,15 @@
 
 export const companyData = {
   name: "synapse.ai",
-  tagline: "Inteligencia Artificial para negocios",
-  subtitle: "Automatizamos procesos y optimizamos decisiones con soluciones de IA diseñadas para empresas.",
+  tagline: "Inteligencia Artificial para Empresas | Automatización de Procesos | Software a Medida",
+  subtitle: "Especialistas en inteligencia artificial empresarial. Automatizamos procesos complejos, desarrollamos software personalizado y optimizamos decisiones con IA avanzada para empresas de todos los tamaños.",
   cta: "Contactar",
 
   // Sección: Quiénes Somos
   about: {
-    title: "Sobre Nosotros",
+    title: "Líderes en Inteligencia Artificial Empresarial",
     description:
-      "Consultora especializada en desarrollo e integración de soluciones de inteligencia artificial para empresas. Combinamos experiencia técnica con enfoque en resultados para automatizar procesos, optimizar operaciones y generar valor real.",
+      "Consultora especializada en inteligencia artificial, automatización de procesos y desarrollo de software a medida. Transformamos empresas mediante soluciones de IA personalizadas que automatizan procesos complejos, optimizan operaciones y generan valor real medible.",
     percentage: 80,
   },
 
@@ -21,21 +21,21 @@ export const companyData = {
   services: [
     {
       id: "01",
-      title: "Consultoría en Inteligencia Artificial aplicada al negocio",
+      title: "Consultoría en Inteligencia Artificial Empresarial",
       description:
-        "Asesoramos a las empresas en la implementación efectiva de inteligencia artificial. Identificamos oportunidades y diseñamos estrategias personalizadas que maximizan los resultados.",
+        "Especialistas en consultoría de IA para empresas. Identificamos oportunidades de automatización, diseñamos estrategias de transformación digital y implementamos soluciones de inteligencia artificial que generan ROI medible.",
     },
     {
       id: "02",
-      title: "Automatización de procesos y análisis predictivo",
+      title: "Automatización de Procesos Empresariales con IA",
       description:
-        "Automatizamos procesos para mejorar la eficiencia operativa. Nuestros expertos desarrollan soluciones que liberan tiempo y recursos, optimizando así tu negocio.",
+        "Automatizamos procesos complejos mediante machine learning y análisis predictivo. Nuestras soluciones de automatización empresarial liberan recursos, reducen errores y optimizan la eficiencia operativa.",
     },
     {
       id: "03",
-      title: "Desarrollo de software a medida (apps, APIs, integraciones)",
+      title: "Desarrollo de Software a Medida y Aplicaciones IA",
       description:
-        "Creamos aplicaciones y sistemas a medida que se integran perfectamente en tu infraestructura. Nuestro enfoque personalizado asegura soluciones efectivas y escalables.",
+        "Desarrollamos software personalizado, APIs inteligentes y aplicaciones empresariales que se integran perfectamente en tu infraestructura. Soluciones escalables y adaptadas a las necesidades específicas de tu negocio.",
     },
     {
       id: "04",

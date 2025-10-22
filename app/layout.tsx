@@ -101,7 +101,7 @@ export const metadata: Metadata = {
     },
   },
   verification: {
-    google: "your-google-verification-code",
+    google: "08BJSr2OwH0HyaxlJQRJ-qLlzPwj-aHpaKde75APqLI",
     yandex: "your-yandex-verification-code",
   },
   category: "technology",
