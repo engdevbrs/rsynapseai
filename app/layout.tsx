@@ -4,6 +4,7 @@ import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import ScrollToTop from "@/components/layout/ScrollToTop";
 import NeuralNetworkBackground from "@/components/ui/NeuralNetworkBackground";
+import Script from "next/script";
 import "./globals.css";
 
 // Configuración de fuentes optimizadas
@@ -29,8 +30,8 @@ const spaceGrotesk = Space_Grotesk({
 
 export const metadata: Metadata = {
   title: {
-    default: "RSYNAPSYSEAI | Transformamos Negocios con Inteligencia Artificial",
-    template: "%s | RSYNAPSYSEAI - Consultoría en IA"
+    default: "RSYNAPSEAI | Transformamos Negocios con Inteligencia Artificial",
+    template: "%s | RSYNAPSEAI - Consultoría en IA"
   },
   description: "Consultora especializada en inteligencia artificial. Desarrollamos e integramos soluciones de IA para automatización, machine learning, chatbots y desarrollo de software. Transformamos tu negocio con tecnología avanzada.",
   keywords: [
@@ -44,20 +45,20 @@ export const metadata: Metadata = {
     "asistentes virtuales",
     "análisis predictivo",
     "transformación digital",
-    "RSYNAPSYSEAI",
+    "rsynapseai",
     "Rodolfo Figueroa",
     "consultoría tecnológica",
     "soluciones IA personalizadas"
   ],
-  authors: [{ name: "RSYNAPSYSEAI", url: "https://rsynapsyseai.com" }],
-  creator: "RSYNAPSYSEAI",
-  publisher: "RSYNAPSYSEAI",
+  authors: [{ name: "rsynapseai", url: "https://rsynapseai.com" }],
+  creator: "rsynapseai",
+  publisher: "rsynapseai",
   formatDetection: {
     email: false,
     address: false,
     telephone: false,
   },
-  metadataBase: new URL("https://rsynapsyseai.com"),
+  metadataBase: new URL("https://rsynapseai.com"),
   alternates: {
     canonical: "/",
   },
@@ -69,22 +70,22 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "es_ES",
-    url: "https://rsynapsyseai.com",
-    title: "RSYNAPSYSEAI | Transformamos Negocios con Inteligencia Artificial",
+    url: "https://rsynapseai.com",
+    title: "rsynapseai | Transformamos Negocios con Inteligencia Artificial",
     description: "Consultoría especializada en IA. Desarrollamos soluciones de inteligencia artificial para automatización, machine learning y transformación digital empresarial.",
-    siteName: "RSYNAPSYSEAI",
+    siteName: "rsynapseai",
     images: [
       {
         url: "/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "RSYNAPSYSEAI - Consultoría en Inteligencia Artificial",
+        alt: "rsynapseai - Consultoría en Inteligencia Artificial",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "RSYNAPSYSEAI | Transformamos Negocios con IA",
+    title: "rsynapseai | Transformamos Negocios con IA",
     description: "Consultoría especializada en inteligencia artificial para empresas. Automatización, machine learning y desarrollo de software.",
     images: ["/og-image.jpg"],
     creator: "@synapse_ia",
@@ -111,10 +112,10 @@ export const metadata: Metadata = {
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Organization",
-  "name": "RSYNAPSYSEAI",
-  "alternateName": "RSYNAPSYSEAI",
-  "url": "https://rsynapsyseai.com",
-  "logo": "https://rsynapsyseai.com/logo.png",
+  "name": "rsynapseai",
+  "alternateName": "rsynapseai",
+  "url": "https://rsynapseai.com",
+  "logo": "https://rsynapseai.com/logo.png",
   "description": "Consultora especializada en inteligencia artificial. Desarrollamos e integramos soluciones de IA para automatización, machine learning y transformación digital empresarial.",
   "foundingDate": "2024",
   "founder": {
@@ -135,12 +136,12 @@ const jsonLd = {
     "@type": "ContactPoint",
     "telephone": "+123-456-7890",
     "contactType": "customer service",
-    "email": "info@rsynapsyseai.com",
+    "email": "info@rsynapseai.com",
     "availableLanguage": "Spanish"
   },
   "sameAs": [
-    "https://linkedin.com/company/rsynapsyseai",
-    "https://twitter.com/rsynapsyseai"
+    "https://linkedin.com/company/rsynapseai",
+    "https://twitter.com/rsynapseai"
   ],
   "service": [
     {
@@ -186,6 +187,24 @@ export default function RootLayout({
       <body
         className={`${inter.variable} ${oswald.variable} ${spaceGrotesk.variable} antialiased`}
       >
+        {/* Google Analytics */}
+        {process.env.NEXT_PUBLIC_GA_ID && (
+          <>
+            <Script
+              src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_ID}`}
+              strategy="afterInteractive"
+            />
+            <Script id="google-analytics" strategy="afterInteractive">
+              {`
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', '${process.env.NEXT_PUBLIC_GA_ID}');
+              `}
+            </Script>
+          </>
+        )}
+        
         <NeuralNetworkBackground />
         <div className="relative z-10">
           <Header />

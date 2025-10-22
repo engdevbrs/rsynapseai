@@ -1,4 +1,4 @@
-# 📧 Configuración de Email - RSYNAPSYSEAI
+# 📧 Configuración de Email - RSYNAPSEAI
 
 ## Configuración del Formulario de Contacto
 
@@ -26,7 +26,7 @@ Para usar Gmail con Nodemailer, necesitas generar una "Contraseña de aplicació
 2. **Generar contraseña de aplicación:**
    - Ve a Seguridad → Contraseñas de aplicaciones
    - Selecciona "Correo" y "Otro (nombre personalizado)"
-   - Escribe "RSYNAPSYSEAI Website"
+   - Escribe "RSYNAPSEAI Website"
    - Copia la contraseña generada (16 caracteres)
 
 3. **Usar la contraseña de aplicación:**

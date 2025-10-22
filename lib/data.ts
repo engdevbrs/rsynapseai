@@ -1,5 +1,5 @@
 /**
- * RSYNAPSYSEAI - DATOS DE LA EMPRESA
+ * RSYNAPSEAI - DATOS DE LA EMPRESA
  * Contenido centralizado para toda la aplicación
  */
 
@@ -82,11 +82,11 @@ export const companyData = {
   solutions: {
     title: "Soluciones Personalizadas Para Cada Negocio",
     subtitle:
-      "En RSYNAPSYSEAI nos dedicamos a adaptar la inteligencia artificial a las necesidades específicas de cada empresa, maximizando su valor y eficiencia.",
+      "En RSYNAPSEAI nos dedicamos a adaptar la inteligencia artificial a las necesidades específicas de cada empresa, maximizando su valor y eficiencia.",
     personalizedSolutions: {
       title: "Soluciones Personalizadas",
       description:
-        "En RSYNAPSYSEAI, conectamos el poder de la inteligencia artificial con la experiencia en desarrollo de software para ofrecer soluciones personalizadas que aceleran la transformación digital de empresas en distintas industrias.",
+        "En RSYNAPSEAI, conectamos el poder de la inteligencia artificial con la experiencia en desarrollo de software para ofrecer soluciones personalizadas que aceleran la transformación digital de empresas en distintas industrias.",
     },
     expertise: {
       title: "Expertos en IA",
@@ -175,8 +175,8 @@ export const companyData = {
   // Información de Contacto
   contact: {
     phone: "+56 9 1234 5678",
-    email: "info@rsynapsyseai.com",
-    website: "www.rsynapsyseai.com",
+    email: "info@rsynapseai.com",
+    website: "www.rsynapseai.com",
     address: "Santiago, Chile",
   },
 
@@ -184,7 +184,7 @@ export const companyData = {
   socialMedia: [
     {
       name: "LinkedIn",
-      url: "https://www.linkedin.com/company/rsynapsyseai",
+      url: "https://www.linkedin.com/company/rsynapseai",
       icon: "linkedin",
     },
     {

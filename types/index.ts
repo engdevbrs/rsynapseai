@@ -1,5 +1,5 @@
 /**
- * RSYNAPSYSEAI - TYPESCRIPT TYPES
+ * RSYNAPSEAI - TYPESCRIPT TYPES
  * Definiciones de tipos globales para la aplicación
  */
 

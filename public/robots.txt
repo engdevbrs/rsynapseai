@@ -2,7 +2,7 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://rsynapsyseai.com/sitemap.xml
+Sitemap: https://rsynapseai.com/sitemap.xml
 
 # Crawl-delay for better server performance
 Crawl-delay: 1

@@ -26,7 +26,7 @@ Gmail requiere una contraseña de aplicación específica para aplicaciones de t
 2. **Generar App Password**:
    - Ve a Seguridad → Contraseñas de aplicaciones
    - Selecciona "Aplicación" → "Otro (nombre personalizado)"
-   - Escribe "RSYNAPSYSEAI Website"
+   - Escribe "RSYNAPSEAI Website"
    - Copia la contraseña generada (16 caracteres)
 
 ### Paso 2: Configurar Variables de Entorno

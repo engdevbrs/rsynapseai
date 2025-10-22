@@ -1,13 +1,13 @@
-# 🚀 Guía de Testing SEO para RSYNAPSYSEAI
+# 🚀 Guía de Testing SEO para rsynapseai
 
 ## 📊 Herramientas de Testing SEO Implementadas
 
 ### 1. **Google Search Console**
 - **URL**: https://search.google.com/search-console
 - **Configuración**: 
-  - Agregar propiedad: `https://rsynapsyseai.com`
+  - Agregar propiedad: `https://rsynapseai.com`
   - Verificar propiedad con archivo HTML o meta tag
-  - Enviar sitemap: `https://rsynapsyseai.com/sitemap.xml`
+  - Enviar sitemap: `https://rsynapseai.com/sitemap.xml`
 
 ### 2. **Google Analytics 4**
 - **Configuración**: 
@@ -27,7 +27,7 @@
 
 #### **PageSpeed Insights**
 - **URL**: https://pagespeed.web.dev/
-- **Testing**: Ingresar `https://rsynapsyseai.com`
+- **Testing**: Ingresar `https://rsynapseai.com`
 - **Métricas**: Core Web Vitals, Performance, SEO
 
 #### **GTmetrix**
@@ -123,7 +123,7 @@ NEXT_PUBLIC_GA_ID=G-XXXXXXXXXX
 NEXT_PUBLIC_GSC_VERIFICATION=your-verification-code
 
 # Otros
-NEXT_PUBLIC_SITE_URL=https://rsynapsyseai.com
+NEXT_PUBLIC_SITE_URL=https://rsynapseai.com
 ```
 
 ## 📝 Checklist de SEO Implementado
@@ -155,5 +155,5 @@ NEXT_PUBLIC_SITE_URL=https://rsynapsyseai.com
 ## 📞 Contacto para Soporte SEO
 
 Para dudas sobre implementación SEO:
-- Email: info@rsynapsyseai.com
-- LinkedIn: /company/rsynapsyseai
+- Email: info@rsynapseai.com
+- LinkedIn: /company/rsynapseai

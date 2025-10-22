@@ -68,7 +68,7 @@ export default function Team() {
               style={{ marginTop: 0 }}
             />
             <p className="mt-6 sm:mt-8 text-base sm:text-lg text-text-secondary mx-auto text-center">
-              Conoce al equipo experto detrás de RSYNAPSYSEAI que hace posible
+              Conoce al equipo experto detrás de RSYNAPSEAI que hace posible
               la transformación digital
             </p>
           </motion.div>
