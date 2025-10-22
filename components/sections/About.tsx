@@ -2,7 +2,7 @@
 
 import Image from 'next/image'
 import { companyData } from '@/lib/data'
-import { Building2, User, Users, Award, Calendar, Briefcase, CheckCircle2, Linkedin } from 'lucide-react'
+import { Building2, Users, Award, Calendar, Briefcase, CheckCircle2, Linkedin } from 'lucide-react'
 
 export default function About() {
   return (

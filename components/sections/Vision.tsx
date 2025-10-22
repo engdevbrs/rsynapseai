@@ -1,7 +1,6 @@
 'use client'
 
 import { companyData } from '@/lib/data'
-import { Eye, Lightbulb } from 'lucide-react'
 
 export default function Vision() {
   return (

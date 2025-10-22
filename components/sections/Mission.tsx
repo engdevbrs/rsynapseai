@@ -1,7 +1,6 @@
 'use client'
 
 import { companyData } from '@/lib/data'
-import { Target, TrendingUp } from 'lucide-react'
 
 export default function Mission() {
   return (

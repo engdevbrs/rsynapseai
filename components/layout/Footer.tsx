@@ -1,16 +1,11 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { ArrowUp, Mail, Phone, MapPin, ExternalLink } from 'lucide-react'
 import Image from 'next/image'
 import FadeIn from '@/components/animations/FadeIn'
 import { companyData } from '@/lib/data'
 
 export default function Footer() {
-  // Función para scroll to top
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' })
-  }
 
   // Función para navegar a secciones
   const scrollToSection = (sectionId: string) => {
